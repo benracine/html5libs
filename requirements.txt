@@ -35,9 +35,10 @@ python-openid==2.2.5
 django-social-auth==0.5.12
 
 # export stuff
-# pip install -U -e git://github.com/mrj0/django-modeler#egg=django-modeler-0.1.0-dev
--e git://github.com/mrj0/django-modeler#egg=django-modeler-0.1.0-dev
+pip install -U -e git://github.com/mrj0/django-modeler#egg=django-modeler-0.1.0-dev
+#-e git://github.com/mrj0/django-modeler#egg=django-modeler-0.1.0-dev
+# django-modeler
 
 # The following must be installed system-wide using the appropriate package manager
 # sudo apt-get install python-psycopg2
-# psycopg2==2.4
+psycopg2==2.4
