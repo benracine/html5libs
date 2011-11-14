@@ -231,11 +231,11 @@ PACKAGINATOR_SEARCH_PREFIX = "django"
 
 # if set to False any auth user can add/modify packages
 # only django admins can delete
-RESTRICT_PACKAGE_EDITORS = True
+RESTRICT_PACKAGE_EDITORS = False
 
 # if set to False  any auth user can add/modify grids
 # only django admins can delete
-RESTRICT_GRID_EDITORS = True
+RESTRICT_GRID_EDITORS = False
 
 # package extenders are dicts that can include:
     # form
@@ -288,8 +288,8 @@ SOCIAL_AUTH_EXTRA_DATA = False
 SOCIAL_AUTH_CHANGE_SIGNAL_ONLY = True
 
 LOGIN_URL = "/login/"
-#LOGIN_REDIRECT_URLNAME = "home"
-LOGIN_REDIRECT_URL = '/login/'
+LOGIN_REDIRECT_URLNAME = "home"
+LOGIN_REDIRECT_URL = '/'
 
 GITHUB_APP_ID = '21c2f70abd62760b5582'
 GITHUB_API_SECRET = 'e138c98ace4c80e38b63694c845ad5a5b421baaa'

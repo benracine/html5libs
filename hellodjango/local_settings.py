@@ -13,7 +13,6 @@ DATABASES = {
 
 FRAMEWORK_TITLE = "Django"
 
-
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 SERVE_MEDIA = DEBUG
@@ -36,8 +35,7 @@ LAUNCHPAD_ACTIVE = False
 URCHIN_ID = ""
 
 # Email Settings
-DEFAULT_FROM_EMAIL = \
-        'Django Packages <djangopackages-noreply@djangopackages.com>'
+DEFAULT_FROM_EMAIL = 'Django Packages <djangopackages-noreply@djangopackages.com>'
 EMAIL_SUBJECT_PREFIX = '[Django Packages] '
 
 # Make this unique, and don't share it with anybody.
