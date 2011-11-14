@@ -283,13 +283,16 @@ AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
 )
 
-SOCIAL_AUTH_ENABLED_BACKENDS = ('github')#('openid', 'github')
+SOCIAL_AUTH_ENABLED_BACKENDS = ('github') #('openid', 'github')
 SOCIAL_AUTH_COMPLETE_URL_NAME = 'socialauth_complete'
 SOCIAL_AUTH_ASSOCIATE_URL_NAME = 'associate_complete'
 SOCIAL_AUTH_DEFAULT_USERNAME = lambda u: slugify(u)
 SOCIAL_AUTH_EXTRA_DATA = False
 SOCIAL_AUTH_CHANGE_SIGNAL_ONLY = True
 LOGIN_REDIRECT_URL = '/'
+
+GITHUB_CONSUMER_KEY = 21c2f70abd62760b5582
+GITHUB_CONSUMER_SECRET = e138c98ace4c80e38b63694c845ad5a5b421baaa
 
 # associate user via email
 SOCIAL_AUTH_ASSOCIATE_BY_MAIL = True
