@@ -1,0 +1,3 @@
+[submodule "opencomparison"]
+	path = opencomparison
+	url = git@github.com:benracine/opencomparison.git
