@@ -3,13 +3,15 @@ import logging
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2", # Add "postgresql_psycopg2", "postgresql", "mysql", "sqlite3" or "oracle".
-        "NAME": "django_oc",          # Or path to database file if using sqlite3.
-        "USER": "django_oc",              # Not used with sqlite3.
-        "PASSWORD": "CHANGE-THIS",                  # Not used with sqlite3.
+        "NAME": "test2",          # Or path to database file if using sqlite3.
+        "USER": "postgres",              # Not used with sqlite3.
+        "PASSWORD": "",                  # Not used with sqlite3.
         "HOST": "localhost",             # Set to empty string for localhost. Not used with sqlite3.
         "PORT": "5432",                  # Set to empty string for default. Not used with sqlite3.
     }
 }
+
+FRAMEWORK_TITLE = "test"
 
 
 DEBUG = True
@@ -39,12 +41,7 @@ DEFAULT_FROM_EMAIL = \
 EMAIL_SUBJECT_PREFIX = '[Django Packages] '
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = "something"
-
-# You can remove this after you change your SECRET_KEY
-if SECRET_KEY == "CHANGE-THIS-KEY-TO-SOMETHING-ELSE":
-    raise Exception('You must change your SECRET_KEY settings in '
-            'local_settings.py.')
+SECRET_KEY = "password"
 
 # See http://celeryproject.org/docs/configuration.html#task-execution-settings
 CELERY_ALWAYS_EAGER = True
@@ -53,4 +50,4 @@ BROKER_BACKEND = "django"
 
 LOCAL_INSTALLED_APPS = ('djkombu', )
 
-REGISTRATION_OPEN = False
+REGISTRATION_OPEN = True
