@@ -11,7 +11,7 @@ DATABASES = {
     }
 }
 
-FRAMEWORK_TITLE = "test"
+FRAMEWORK_TITLE = "Django"
 
 
 DEBUG = True
