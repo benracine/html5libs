@@ -1,0 +1,62 @@
+;"d3";"Dygraphs";"JSXGraph";"gRaphael";"Protovis";"GoogleCharts";"JIT";"dhtmlxChart";"Elycharts";"Highcharts";"JSCharts"
+"Project URL";1;2;3;4;5;6;7;8;9;10;11
+"Source Repository URL";1;2;3;4;5;6;7;8;9;10;11
+"Include URL";;;3;;;;;;;;
+"License";"BSD";"MIT";"LGPL – Lesser GNU General Public License";"MIT";"BSD";"API access only";"Copyright, senchalabs";"Standard Edition GNU GPL v2, Professional Edition Commerically Licensed";"MIT";"80 dollars (single website) - 2000 dollars (10 developers license) ";"Commericially licensed"
+"Trial and Pricing";"Free ";"Free ";"Free ";"Free (you can donate) ";"Free ";"Free";"Free (you can donate) ";"Free under GNU GPL, $49 ";"Free ";"80 dollars (single website) - 2000 dollars (10 developers license) ";"$79, $119, $169 for 1,2,5 domains"
+"SVG or Canvas";"SVG";"Canvas";"SVG with some Canvas support";"SVG";"SVG";"SVG";"Canvas";"Canvas";"SVG";"SVG";"SVG"
+"Compressed Library Size";"32 KB ";"69 KB";"82 KB";"12 KB w/o packages, 30.5 KB with packages";"32 KB ";"n/a";"159 KB";"35 KB ";"32 KB ";"81 KB";"148 KB"
+"Chart Types";;;;;;;;;;;
+"Area Chart";"Yes ";"Yes Line charts can also have fills ";"No ";"Yes Line charts can also have fills ";"Yes ";"Yes";"Yes ";"Yes ";"Yes ";"Yes ";"No "
+"Area Spline";"Yes ";"No ";"No ";"No ";"Yes ";;;"No ";"Yes ";"Yes ";"No "
+"Column Chart";"Yes ";"No ";"Yes ";"Yes ";"Yes ";"Yes";"Yes ";"Yes ";"Yes ";"Yes ";"Yes "
+"Row Chart";"Yes ";"No ";;"No ";"Yes ";"Yes";;"Yes ";;"Yes ";"Yes "
+"Dot Plot";"Yes ";"No ";"No ";"Yes ";"Yes ";"Yes";;"No ";"Yes ";"No ";"No "
+"Line Chart";"Yes ";"Yes ";"Yes ";"Yes ";"Yes ";"Yes";;"Yes ";"Yes ";"Yes ";"Yes "
+"Pie Graph";"Yes ";"No ";"Yes ";"Yes ";"Yes ";"Yes";"Yes ";"Yes ";"Yes ";"Yes ";"Yes "
+"Scatterplot";"Yes ";"No ";"No ";"No ";"Yes ";"Yes";;"No ";"No ";"Yes ";"No "
+"Spline Chart";"Yes ";"No ";"Yes ";"No ";"Yes ";;;"Yes ";"Yes ";"Yes ";"No "
+"Sparklines";"Yes ";"No ";"No ";"No ";"Yes ";"Yes";"No";"Yes ";"Yes ";"No ";
+"Heatmap";"Yes ";"No ";"No ";"No ";"Yes ";"Yes";"Yes ";;;"No ";
+"Polar/Radar Plot";;"No ";"No ";"No ";;"Yes";"Yes ";;;"No ";
+"TreeMap";"Yes ";"No ";"No ";"No ";"Yes ";;"Yes ";;;"No ";
+"Candlestick";"Yes ";"No ";"No ";"No ";"Yes ";"Yes";"No";;;"Yes, HighStocks";
+"NodeLinks";"Yes ";"No ";"No ";"No ";"Yes ";;"No";;;"No ";
+"Streamgraphs";"Yes ";"No ";"No ";"No ";"Yes ";;"No";;;"No ";
+"Gauge";;"No ";"No ";"No ";;"Yes";"No";;;"No ";
+"Parallel Coordinates";"Yes ";"No ";"No ";"No ";"Yes ";"Yes";"No";;;"No ";
+"Stemplots";"Yes ";"No ";"No ";"No ";"Yes ";;"No";;;"No ";
+"SpaceTree";;"No ";"No ";"No ";;;"Yes ";;;"No ";
+"Rgraph";;"No ";"No ";"No ";;;"Yes ";;;"No ";
+"HyperTree";;"No ";"No ";"No ";;;"Yes ";;;"No ";
+"Maps";"Yes ";"No ";"No ";"No ";"Yes ";"Yes";"No";"No ";"No ";"No ";
+"Chloropleth Maps";"Yes ";"No ";"No ";"No ";"Yes ";;"No";;;"No ";
+"Tables";"Matrix Diagram";"No ";"No ";"No ";"Matrix Diagram";"Yes";"Use a common JavaScript DataTable class";"Grid";;;
+"Other Charts";"Force-Directed Layouts, ";;;"No ";"Force-Directed Layouts, ";"Org Chart, Motion Chart, Term/Word Cloud, Venn";;"Tree";"Funnel, Donut";;
+"Features";;;;;;;;;;;
+"Interactive Zoom";"Yes ";"Yes ";"No ";"No ";"Yes ";;;"No ";"No ";"Yes ";"No "
+"Annotations on the Chart";"Yes ";"Yes ";;"No ";"Yes ";;;"Yes ";"No ";"No ";"No "
+"Combination of Charts";"Yes ";"No ";"Yes ";"No ";"Yes ";"Yes";;"No ";"Limited";"Yes ";"Yes "
+"Clickable Points";"Yes ";"No ";;"No ";"Yes ";;;"Yes ";"Yes ";"Yes ";"No "
+"Date-time Axis";"Yes ";"Yes ";"Yes ";"No ";"Yes ";;;"No ";"No ";"Yes ";"No "
+"Dynamic Charts";"Yes ";"No ";"Yes ";"No ";"Yes ";;;"Yes ";"Yes ";"Yes ";"No "
+"Export Files";"No Workaround available ";"No ";;"No ";"No Workaround available ";;;"No ";"No ";"Yes PNG, JPG, PDF, SVG ";"No "
+"XHR";"Yes ";"Yes ";"Yes ";"No ";"Yes ";;;"Yes ";"No ";"Yes ";"No "
+"Highlights Region";"Yes ";"Yes ";"No ";"No ";"Yes ";;;"No ";"Yes ";"No ";"No "
+"Data Labels";"Yes ";"Yes ";"Yes ";"Yes ";"Yes ";;;"Yes ";"Yes ";"Yes ";"Yes "
+"Text Rotation for Labels";"Yes ";"No ";"No ";"No ";"Yes ";;;"Yes With CSS ";"Yes ";"Yes ";"No "
+"Sliders";;;;;;"Yes";;;;;
+"Interactive Charts";"Yes ";"Yes ";"Yes ";"Yes ";"Yes ";;;"Yes ";"Yes ";"Yes ";"No "
+"Print Support";;"No ";;"No ";;;;"No ";"Yes ";"Yes ";"No "
+"Tooltips About Data Points";"Yes ";"No ";;"Yes ";"Yes ";;;"Yes ";"Yes ";"Yes ";"No "
+"Additional Features";;"Displays values on mouseover, supports error bands, adjustable averaging period, time-series centric assumptions";"Runge-Kutta solver, ";;;"Tex Rendering";;;;;
+"Browser Support";;;;;;;;;;;
+"Google Chrome Support";"Yes ";"Yes";"Yes ";"Yes ";"Yes ";"Yes";"Yes ";"Yes ";"Yes 5.0+ ";"Yes ";"Yes 10+"
+"Firefox Support";"Yes ";"Yes";"Yes 2.0+ ";"Yes 3.0+ ";"Yes ";"Yes";"Yes, 0.9+";"Yes, 0.9+";"Yes 3.0+ ";"Yes ";"Yes 1.5+ "
+"Internet Explorer Support";"No Partial ";"Yes, using excanvas";"Yes 6.0+ ";"Yes 6.0+ ";"No Partial ";"Yes";"Yes, 5.5+";"Yes, 5.5+";"Yes 6.0+ ";"Yes 6.0+ ";"Yes 6.0+ "
+"Safari";"Yes ";"Yes";"Yes 3.0+ ";"Yes 3.0+ ";"Yes ";"Yes";"Yes, 2.0+";"Yes, 2.0+";"Yes 3.0+ ";"Yes ";"Yes 3.1+ "
+"Opera";"Yes 9.5+ ";"Yes";"Yes ";"Yes 9.5+ ";;"Yes";"Yes 9.0+ ";"Yes 9.0+ ";"Yes 9.5+ ";"Yes ";"Yes 9+ "
+"iOS";"Yes ";"Yes";"Yes ";"Yes";"Yes ";"Yes ";"Yes ";"Yes ";"Yes ";"Yes ";"Yes 1.0+ "
+"Android";"3.0+";"Yes";"Yes, 2+, 3+";"3.0+";"3.0+";"3.0+";"Yes ";"Yes ";"3.0+";"3.0+";"Yes"
+"Social Networking";;;;;;;;;;;
+"Twitter";"@mbostock";"@danvdk";;"@RaphaelJS ";;;"@philogb ";"@dhtmlx ";"@Elycharts ";;
