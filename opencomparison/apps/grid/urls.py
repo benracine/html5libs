@@ -115,7 +115,7 @@ urlpatterns = patterns("",
     
     url(
         regex = '^g/(?P<slug>[-\w]+)/landscape/$',
-        view    = views.grid_detail_landscape,
+        view    = views.grid_detail,
         name    = 'grid_landscape',
     ),    
     
