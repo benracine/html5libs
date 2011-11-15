@@ -1,19 +1,20 @@
 """views for the :mod:`apps.grid` app"""
-from django.db.models import Count
+
+from django.conf import settings
 from django.contrib.auth.decorators import login_required, permission_required
 from django.contrib.auth.models import User 
+from django.contrib import messages
+from django.core.cache import cache
 from django.core.urlresolvers import reverse 
+from django.db.models import Count
 from django.http import HttpResponseRedirect, Http404, HttpResponseForbidden
-from django.shortcuts import render_to_response, get_object_or_404 
-from django.template import RequestContext 
-
+from django.shortcuts import get_object_or_404, render
 
 from grid.forms import ElementForm, FeatureForm, GridForm, GridPackageForm
 from grid.models import Element, Feature, Grid, GridPackage
 from package.models import Package
 from package.forms import PackageForm
 from package.views import repo_data_for_js
-
 
 def build_element_map(elements):
     # Horrifying two-level dict due to needing to use hash() function later
@@ -22,7 +23,6 @@ def build_element_map(elements):
         element_map.setdefault(element.feature_id, {})
         element_map[element.feature_id][element.grid_package_id] = element
     return element_map
-
 
 def grids(request, template_name="grid/grids.html"):
     """lists grids
@@ -33,14 +33,9 @@ def grids(request, template_name="grid/grids.html"):
     """
     # annotations providing bad counts
     #grids = Grid.objects.annotate(gridpackage_count=Count('gridpackage'), feature_count=Count('feature'))
-    return render_to_response(
-        template_name, {
-            'grids': Grid.objects.all(),
-        }, context_instance = RequestContext(request)
-    )
+    return render(request, template_name, {'grids': Grid.objects.all(),})
 
-
-def grid_detail(request, slug, template_name="grid/grid_detail.html"):
+def grid_detail_landscape(request, slug, template_name="grid/grid_detail2.html"):
     """displays a grid in detail
 
     Template context:
@@ -51,30 +46,30 @@ def grid_detail(request, slug, template_name="grid/grid_detail.html"):
     * ``grid_packages`` - packages involved in the current grid
     """
     grid = get_object_or_404(Grid, slug=slug)
-    features = grid.feature_set.all().order_by('-pk')
+    features = grid.feature_set.all()
 
-    gp = grid.gridpackage_set.select_related('gridpackage', 'package__repo', 'package__category')
-    grid_packages = gp.annotate(usage_count=Count('package__usage')).order_by('-usage_count', 'package')
+    grid_packages = grid.grid_packages
 
-    elements = Element.objects.all().filter(feature__in=features, grid_package__in=grid_packages)
+    elements = Element.objects.all() \
+                .filter(feature__in=features,
+                        grid_package__in=grid_packages)
 
     element_map = build_element_map(elements)
 
+    # These attributes are how we determine what is displayed in the grid
     default_attributes = [('repo_description', 'Description'), 
                 ('category','Category'), ('pypi_downloads', 'Downloads'), ('last_updated', 'Last Updated'), ('pypi_version', 'Version'),
                 ('repo', 'Repo'), ('commits_over_52', 'Commits'), ('repo_watchers', 'Repo watchers'), ('repo_forks', 'Forks'),
-                ('participant_list', 'Participants')]
-
-    return render_to_response(
-        template_name, {
+                ('participant_list', 'Participants'), ('license_latest', 'License')                
+            ]
+            
+    return render(request, template_name, {
             'grid': grid,
             'features': features,
             'grid_packages': grid_packages,
             'attributes': default_attributes,
             'elements': element_map,
-        }, context_instance = RequestContext(request)
-    )
-
+        })
 
 def grid_detail_feature(request, slug, feature_id, bogus_slug, template_name="grid/grid_detail_feature.html"):
     """a slightly more focused view than :func:`grid.views.grid_detail`
@@ -89,19 +84,22 @@ def grid_detail_feature(request, slug, feature_id, bogus_slug, template_name="gr
         raise Http404
     grid_packages = grid.gridpackage_set.select_related('gridpackage')
 
-    elements = Element.objects.all().filter(feature__in=features, grid_package__in=grid_packages)
+    elements = Element.objects.all() \
+                .filter(feature__in=features,
+                        grid_package__in=grid_packages)
 
     element_map = build_element_map(elements)
 
-    return render_to_response(
-        template_name, {
+    return render(
+        request,
+        template_name, 
+        {
             'grid': grid,
             'feature': features[0],
             'grid_packages': grid_packages,
             'elements': element_map,
-        }, context_instance = RequestContext(request)
+        }
     )
-
 
 @login_required
 def add_grid(request, template_name="grid/add_grid.html"):
@@ -123,10 +121,7 @@ def add_grid(request, template_name="grid/add_grid.html"):
         new_grid = form.save()
         return HttpResponseRedirect(reverse('grid', kwargs={'slug':new_grid.slug}))
 
-    return render_to_response(template_name, { 
-        'form': form
-        },
-        context_instance=RequestContext(request))
+    return render(request, template_name, { 'form': form })
         
 @login_required
 def edit_grid(request, slug, template_name="grid/edit_grid.html"):
@@ -146,13 +141,11 @@ def edit_grid(request, slug, template_name="grid/edit_grid.html"):
 
     if form.is_valid():
         grid = form.save()
+        message = "Grid has been edited"
+        messages.add_message(request, messages.INFO, message)                    
         return HttpResponseRedirect(reverse('grid', kwargs={'slug': grid.slug}))
 
-    return render_to_response(template_name, { 
-        'form': form,  
-        'grid': grid
-        }, 
-        context_instance=RequestContext(request))  
+    return render(request, template_name, { 'form': form,  'grid': grid } )  
         
 @login_required
 def add_feature(request, grid_slug, template_name="grid/add_feature.html"):
@@ -182,11 +175,7 @@ def add_feature(request, grid_slug, template_name="grid/add_feature.html"):
         feature.save()
         return HttpResponseRedirect(reverse('grid', kwargs={'slug':feature.grid.slug}))
 
-    return render_to_response(template_name, { 
-        'form': form,
-        'grid':grid
-        },
-        context_instance=RequestContext(request))           
+    return render(request, template_name, { 'form': form,'grid':grid })
         
 @login_required
 def edit_feature(request, id, template_name="grid/edit_feature.html"):
@@ -207,11 +196,7 @@ def edit_feature(request, id, template_name="grid/edit_feature.html"):
         feature = form.save()
         return HttpResponseRedirect(reverse('grid', kwargs={'slug': feature.grid.slug}))
 
-    return render_to_response(template_name, { 
-        'form': form,
-        'grid': feature.grid  
-        }, 
-        context_instance=RequestContext(request))
+    return render(request, template_name, { 'form': form,'grid': feature.grid })
         
 @permission_required('grid.delete_feature')
 def delete_feature(request, id, template_name="grid/edit_feature.html"):
@@ -241,6 +226,7 @@ def delete_grid_package(request, id, template_name="grid/edit_feature.html"):
 
     Redirects to :func:`grid.views.grid_detail`.
     """
+
 
     # do not need to check permission via profile because
     # we default to being strict about deleting
@@ -273,17 +259,15 @@ def edit_element(request, feature_id, package_id, template_name="grid/edit_eleme
     form = ElementForm(request.POST or None, instance=element)
 
     if form.is_valid():
-        element = form.save()
+        element = form.save()        
         return HttpResponseRedirect(reverse('grid', kwargs={'slug': feature.grid.slug}))
 
-    return render_to_response(template_name, { 
+    return render(request, template_name, { 
         'form': form,
         'feature':feature,
         'package':grid_package.package,
         'grid':feature.grid
-        }, 
-        context_instance=RequestContext(request))        
-
+        })        
 
 @login_required
 def add_grid_package(request, grid_slug, template_name="grid/add_grid_package.html"):
@@ -295,13 +279,13 @@ def add_grid_package(request, grid_slug, template_name="grid/add_grid_package.ht
     grid = get_object_or_404(Grid, slug=grid_slug)
     grid_package = GridPackage()
     form = GridPackageForm(request.POST or None, instance=grid_package)    
-    message = ''
 
     if form.is_valid(): 
         package = get_object_or_404(Package, id=request.POST['package'])    
         try:
             GridPackage.objects.get(grid=grid, package=package)
             message = "Sorry, but '%s' is already in this grid." % package.title
+            messages.add_message(request, messages.ERROR, message)            
         except GridPackage.DoesNotExist:
             grid_package = GridPackage(
                         grid=grid, 
@@ -316,13 +300,10 @@ def add_grid_package(request, grid_slug, template_name="grid/add_grid_package.ht
     
 
 
-    return render_to_response(template_name, { 
+    return render(request, template_name, { 
         'form': form,
-        'grid': grid,
-        'message': message
-        },
-        context_instance=RequestContext(request))
-
+        'grid': grid
+        })
 
 @login_required
 def add_new_grid_package(request, grid_slug, template_name="package/package_form.html"):
@@ -344,12 +325,7 @@ def add_new_grid_package(request, grid_slug, template_name="package/package_form
         )
         return HttpResponseRedirect(reverse("grid", kwargs={"slug":grid_slug}))
     
-    return render_to_response(template_name, {
-        "form": form,
-        "repo_data": repo_data_for_js(),
-        "action": "add",
-        },
-        context_instance=RequestContext(request))
+    return render(request, template_name, {"form": form,"repo_data": repo_data_for_js(),"action": "add",})
         
 
 def ajax_grid_list(request, template_name="grid/ajax_grid_list.html"):
@@ -360,8 +336,41 @@ def ajax_grid_list(request, template_name="grid/ajax_grid_list.html"):
     package_id = request.GET.get('package_id','')
     if package_id:
         grids = grids.exclude(gridpackage__package__id=package_id)
-    return render_to_response(template_name, {
-        'grids': grids
-        },
-        context_instance=RequestContext(request)
-    )
+    return render(request, template_name, {'grids': grids})
+
+
+def grid_detail(request, slug, template_name="grid/grid_detail.html"):
+    """displays a grid in detail
+
+    Template context:
+
+    * ``grid`` - the grid object
+    * ``elements`` - elements of the grid
+    * ``features`` - feature set used in the grid
+    * ``grid_packages`` - packages involved in the current grid
+    """
+    grid = get_object_or_404(Grid, slug=slug)
+    features = grid.feature_set.all()
+
+    grid_packages = grid.grid_packages
+
+    elements = Element.objects.all() \
+                .filter(feature__in=features,
+                        grid_package__in=grid_packages)
+
+    element_map = build_element_map(elements)
+
+    # These attributes are how we determine what is displayed in the grid
+    default_attributes = [('repo_description', 'Description'), 
+                ('category','Category'), ('pypi_downloads', 'Downloads'), ('last_updated', 'Last Updated'), ('pypi_version', 'Version'),
+                ('repo', 'Repo'), ('commits_over_52', 'Commits'), ('repo_watchers', 'Repo watchers'), ('repo_forks', 'Forks'),
+                ('participant_list', 'Participants'), ('license_latest', 'License')                
+            ]
+            
+    return render(request, template_name, {
+            'grid': grid,
+            'features': features,
+            'grid_packages': grid_packages,
+            'attributes': default_attributes,
+            'elements': element_map,
+        })
