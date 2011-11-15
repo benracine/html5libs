@@ -11,7 +11,7 @@ DATABASES = {
     }
 }
 
-FRAMEWORK_TITLE = "JavaScript Visualization Packages"
+FRAMEWORK_TITLE = "JavaScript Visualization"
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
