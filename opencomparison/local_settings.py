@@ -11,7 +11,7 @@ DATABASES = {
     }
 }
 
-FRAMEWORK_TITLE = "Django"
+FRAMEWORK_TITLE = "JavaScript Visualization Packages"
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
