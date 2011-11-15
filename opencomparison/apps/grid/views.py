@@ -40,7 +40,7 @@ def grids(request, template_name="grid/grids.html"):
     )
 
 
-def grid_detail(request, slug, template_name="grid/grid_detail.html"):
+def grid_detail(request, slug, template_name="grid/grid_detail_vispack.html"):
     """displays a grid in detail
 
     Template context:
