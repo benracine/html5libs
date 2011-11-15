@@ -11,7 +11,9 @@ DATABASES = {
     }
 }
 
-FRAMEWORK_TITLE = "JavaScript Visualization"
+FRAMEWORK_TITLE = "JavaScript"
+SITE_TITLE = "JavaScript Libraries"
+
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -35,11 +37,11 @@ LAUNCHPAD_ACTIVE = False
 URCHIN_ID = ""
 
 # Email Settings
-DEFAULT_FROM_EMAIL = 'Django Packages <djangopackages-noreply@djangopackages.com>'
-EMAIL_SUBJECT_PREFIX = '[Django Packages] '
+DEFAULT_FROM_EMAIL = 'JavaScript Libraries <javascriptlibraries-noreply@javascriptlibraries.opencomparison.com>'
+EMAIL_SUBJECT_PREFIX = '[JavaScript Libraries] '
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = "password"
+SECRET_KEY = "bens_secret_password"
 
 # See http://celeryproject.org/docs/configuration.html#task-execution-settings
 CELERY_ALWAYS_EAGER = True

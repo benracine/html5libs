@@ -8,23 +8,23 @@
     <link rel="stylesheet" href="{{ STATIC_URL }}css/home.css" />
 {% endblock %}
 
-{% block head_title %}{{ SITE_TITLE }} reusable apps, sites and tools directory{% endblock %}
+{% block head_title %}{{ SITE_TITLE }} reusable libraries directory{% endblock %}
 
 {% block body_class %}home{% endblock %}
 
 {% block body %}
 <div class="twelve_column section">
     <div class="three column">
-        <h2><i>{{ SITE_TITLE }} is a directory of reusable apps, sites, tools, and more for your {{ FRAMEWORK_TITLE }} projects.</i></h2>
-        <p><b>{{ package_count }}</b> {% trans "packages and counting!" %}</p>
+        <h2><i>{{ SITE_TITLE }} is a directory of reusable tools for your {{ FRAMEWORK_TITLE }} projects.</i></h2>
+        <p><b>{{ package_count }}</b> {% trans "libraries and counting!" %}</p>
         <p>
-            {% trans "Know of any packages not listed here?  Add them now!  It's quick and easy." %}
+            {% trans "Know of any libraries not listed here?  Add them now!  It's quick and easy." %}
         </p>
         <p>
-            <a class="large awesome forestgreen" href="{% url add_package %}">{% trans "add package »" %}</a>
+            <a class="large awesome forestgreen" href="{% url add_package %}">{% trans "add library »" %}</a>
         </p>
         <p>
-            {% trans "Or add a grid comparing the features of 2 or more similar packages." %}
+            {% trans "Or add a grid comparing the features of 2 or more similar libraries." %}
         </p>
         <p>
             <a class="large awesome forestgreen" href="{% url add_grid %}">{% trans "add grid »" %}</a>
@@ -34,7 +34,7 @@
     <div class="one column"></div>
 
     <div class="three column">
-        <h2>{% trans "Package Categories" %}</h2>
+        <h2>{% trans "Library Categories" %}</h2>
          {% for category in categories %}
             <h3><a href="{% url category category.slug %}">{{ category.title_plural }}</a> ( {{ category.count }} )</h3>
             <p>{{ category.description }}</p>
@@ -82,9 +82,9 @@
              <div class="package-watchers">{{ potw.repo_watchers }}</div> 
              <p>{{ potw.repo_description }}</p>
          {% endif %}
-        <h3>How to get your {{ FRAMEWORK_TITLE }} package featured here</h3>
-        <p>Do you have a package that you'd like us to feature? Does it have tests? Are the docs on <a href="http://rtfd.org">Read the Docs</a>?</p>
-        <p>If so, tweet at <a href="http://twitter.com/open_comparison">@Open_Comparison</a> with a link, and make sure the description field in your repo has been filled out.</p>
+        <h3>How to get your {{ FRAMEWORK_TITLE }} library featured here</h3>
+        <p>Do you have a library that you'd like us to feature? Does it have tests? Are the docs online? </p> <!-- <a href="http://rtfd.org">Read the Docs</a>?</p>-->
+        <p>If so, tweet at <a href="http://twitter.com/JSLibComp">@JSLibComp</a> with a link, and make sure the description field in your repo has been filled out.</p>
     </div> <!-- three column (1st) -->
     <div class="one column"></div>
 
@@ -100,7 +100,7 @@
         {% endif %}
         <h3>How to get your {{ SITE_TITLE }} grid featured here</h3>
         <p>Have you created a new and interesting grid?</p>
-        <p>Tweet at <a href="http://twitter.com/open_comparison">@Open_Comparison</a> with a link.  We'll consider featuring it.
+        <p>Tweet at <a href="http://twitter.com/JSLibComp">@JSLibComp</a> with a link.  We'll consider featuring it.
     </div> <!-- three column (2nd) -->
     <div class="one column"></div>
 

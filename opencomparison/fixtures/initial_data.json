@@ -1,20 +1,21 @@
 [
   { "fields" : 
       { "created" : "2010-01-01 12:00:00",
-        "description" : "This website aspires to be the best single resource on cataloguing web-based visualization tools",
+        "description" : "Charting and visualization libraries",
         "is_locked" : false,
         "modified" : "2010-01-01 12:00:00",
-        "slug" : "Visualization",
-        "title" : "Visualization"
-      }, "model" : "grid.grid",
+        "slug" : "Charting",
+        "title" : "Charting"
+      }, 
+    "model" : "grid.grid",
     "pk" : 1
   },
   { "fields" : 
       { "created" : "2010-01-01 12:00:00",
-        "description" : "Small components used to build projects.",
+        "description" : "Libraries",
         "modified" : "2010-01-01 12:00:00",
-        "slug" : "apps",
-        "title" : "App"
+        "slug" : "Libraries",
+        "title" : "Libraries"
       },
     "model" : "package.category",
     "pk" : 1
