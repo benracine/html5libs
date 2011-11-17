@@ -113,7 +113,7 @@
         "repo_commits" : 0,
         "repo_description" : "",
         "repo_forks" : 0,
-        "repo_url" : "https://github.com/mbostock/d3.git",
+        "repo_url" : "https://github.com/mbostock/d3",
         "repo_watchers" : 0,
         "slug": "d3",
         "title": "d3"
@@ -140,7 +140,7 @@
         "repo_commits" : 0,
         "repo_description" : "",
         "repo_forks" : 0,
-        "repo_url" : "https://github.com/danvk/dygraphs.git",
+        "repo_url" : "https://github.com/danvk/dygraphs",
         "repo_watchers" : 0,
         "slug": "dygraphs",
         "title": "Dygraphs"
@@ -167,7 +167,7 @@
         "repo_commits" : 0,
         "repo_description" : "",
         "repo_forks" : 0,
-        "repo_url" : "https://github.com/stepheneb/jsxgraph.git",
+        "repo_url" : "https://github.com/stepheneb/jsxgraph",
         "repo_watchers" : 0,
         "slug": "jsxgraph",
         "title": "JSXGraph"
@@ -194,7 +194,7 @@
         "repo_commits" : 0,
         "repo_description" : "",
         "repo_forks" : 0,
-        "repo_url" : "https://github.com/DmitryBaranovskiy/g.raphael.git",
+        "repo_url" : "https://github.com/DmitryBaranovskiy/g.raphael",
         "repo_watchers" : 0,
         "slug": "graphael",
         "title": "gRaphael"
@@ -221,7 +221,7 @@
         "repo_commits" : 0,
         "repo_description" : "",
         "repo_forks" : 0,
-        "repo_url" : "https://github.com/mbostock/protovis.git",
+        "repo_url" : "https://github.com/mbostock/protovis",
         "repo_watchers" : 0,
         "slug": "protovis",
         "title": "Protovis"
@@ -275,7 +275,7 @@
         "repo_commits" : 0,
         "repo_description" : "",
         "repo_forks" : 0,
-        "repo_url" : "https://github.com/philogb/jit.git",
+        "repo_url" : "https://github.com/philogb/jit",
         "repo_watchers" : 0,
         "slug": "jit",
         "title": "JIT"
@@ -329,7 +329,7 @@
         "repo_commits" : 0,
         "repo_description" : "",
         "repo_forks" : 0,
-        "repo_url" : "https://github.com/voidlabs/ElyCharts.git",
+        "repo_url" : "https://github.com/voidlabs/ElyCharts",
         "repo_watchers" : 0,
         "slug": "elycharts",
         "title": "Elycharts"
@@ -356,7 +356,7 @@
         "repo_commits" : 0,
         "repo_description" : "",
         "repo_forks" : 0,
-        "repo_url" : "https://github.com/highslide-software/highcharts.com.git",
+        "repo_url" : "https://github.com/highslide-software/highcharts.com",
         "repo_watchers" : 0,
         "slug": "highcharts",
         "title": "Highcharts"
