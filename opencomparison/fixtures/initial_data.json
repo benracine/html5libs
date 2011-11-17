@@ -222,7 +222,7 @@
         "repo_forks" : 0,
         "repo_url" : "https://github.com/mbostock/protovis.git",
         "repo_watchers" : 0,
-        "slug": "Protovis",
+        "slug": "protovis",
         "title": "Protovis"
       },
     "model" : "package.package",
