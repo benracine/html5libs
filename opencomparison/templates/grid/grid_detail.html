@@ -306,4 +306,17 @@
                  handleRTD($.makeArray($('table#grid span.rtd-status')));
             });    
         </script>
+
+       <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+       <script type="text/javascript" src="{{ STATIC_URL}}js/jquery.tablescroll.js"></script>
+
+        <script>
+        /*<![CDATA[*/
+        jQuery(document).ready(function($)
+        {
+            $('#grid').tableScroll({height:450});
+        });
+        /*]]>*/
+        </script>
+
 {% endblock %}
