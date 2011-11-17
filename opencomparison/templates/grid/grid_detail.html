@@ -27,7 +27,9 @@
         {{ grid.description|urlize|linebreaksbr }}
     </p>    
     
+    {% comment %}
     <p id="grid-classic"><a href="{% url grid_landscape grid.slug %}">Landscape View</a></p>    
+    {% endcomment %}
     
     {% if features %}
         <h2>{% trans "Features currently being evaluated" %}</h2>
