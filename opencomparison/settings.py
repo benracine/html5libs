@@ -86,6 +86,7 @@ if DEBUG:
             'django.template.loaders.app_directories.Loader',
     )
 else:
+    CACHE_BACKEND = 'dummy://'
     TEMPLATE_LOADERS = (
             'django.template.loaders.filesystem.Loader',
             'django.template.loaders.app_directories.Loader',
