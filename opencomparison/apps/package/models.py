@@ -48,7 +48,7 @@ class Package(BaseModel):
     slug            = models.SlugField(_("Slug"), help_text="Enter a valid 'slug' consisting of letters, numbers, underscores or hyphens.<br />Values will be converted to lowercase.", unique=True)
     category        = models.ForeignKey(Category, verbose_name="Installation")
     repo_description= models.TextField(_("Repo Description"), blank=True)
-    repo_url        = models.URLField(_("repo URL"), help_text=repo_url_help_text, blank=True,unique=True, verify_exists=True)
+    repo_url        = models.URLField(_("repo URL"), help_text=repo_url_help_text, blank=True, verify_exists=True)
     repo_watchers   = models.IntegerField(_("repo watchers"), default=0)
     repo_forks      = models.IntegerField(_("repo forks"), default=0)
     repo_commits    = models.IntegerField(_("repo commits"), default=0)
