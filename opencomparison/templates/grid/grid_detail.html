@@ -49,7 +49,7 @@
                     <td>{% trans "Description" %}</td>
                     {% for grid_package in grid_packages %}
                         <td>
-                            {% with grid_package.package.repo_description|truncatewords:20 as short %}
+                            {% with grid_package.package.repo_description|truncatewords:9 as short %}
                                 {% if grid_package.package.repo_description|length > short|length %}
                                    {{ short|wordwrap:30|linebreaksbr|slice:"-3" }}<a href="{{ grid_package.package.get_absolute_url }}">...</a>                                    
                                 {% else %}
@@ -163,6 +163,9 @@
                 {% include "grid/snippets/grid_row_header.html" %}
                 {% for feature in features %}
                     <tr class="{% cycle 'even' 'odd' %}">
+                        {% if forloop.counter|divisibleby:14 %}
+                            {% include "grid/snippets/grid_row_header.html" %}
+                        {% endif %}
                         <td>{{ feature.title }}</td>
                         {% for grid_package in grid_packages %}
                             {% with elements|hash:feature.pk|hash:grid_package.pk as element %}
@@ -310,6 +313,7 @@
        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
        <script type="text/javascript" src="{{ STATIC_URL}}js/jquery.tablescroll.js"></script>
 
+        <!--
         <script>
         /*<![CDATA[*/
         jQuery(document).ready(function($)
@@ -318,5 +322,6 @@
         });
         /*]]>*/
         </script>
+        -->
 
 {% endblock %}
