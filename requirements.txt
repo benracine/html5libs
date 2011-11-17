@@ -42,3 +42,6 @@ django-modeler
 # The following must be installed system-wide using the appropriate package manager
 # sudo apt-get install python-psycopg2
 psycopg2==2.4.1
+
+#BJR
+Werkzeug

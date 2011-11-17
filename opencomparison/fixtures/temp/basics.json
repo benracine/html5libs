@@ -1,0 +1,104 @@
+[
+  { "fields" : 
+      { "created" : "2010-01-01 12:00:00",
+        "description" : "This website aspires to be the best single resource on cataloguing web-based visualization tools",
+        "is_locked" : false,
+        "modified" : "2010-01-01 12:00:00",
+        "slug" : "Visualization",
+        "title" : "Visualization"
+      }, "model" : "grid.grid",
+    "pk" : 1
+  },
+  { "fields" : 
+      { "created" : "2010-01-01 12:00:00",
+        "description" : "Small components used to build projects.",
+        "modified" : "2010-01-01 12:00:00",
+        "slug" : "apps",
+        "title" : "App"
+      },
+    "model" : "package.category",
+    "pk" : 1
+  },
+  { "fields" : 
+      { "name" : "Moderators",
+        "permissions" : [ [ "delete_gridpackage",
+              "grid",
+              "gridpackage"
+            ],
+            [ "delete_feature",
+              "grid",
+              "feature"
+            ]
+          ]
+      },
+    "model" : "auth.group",
+    "pk" : 1
+  },
+  { "fields" : 
+      { "date_joined" : "2010-01-01 12:00:00",
+        "email" : "",
+        "first_name" : "",
+        "groups" : [  ],
+        "is_active" : true,
+        "is_staff" : false,
+        "is_superuser" : false,
+        "last_login" : "2010-01-01 12:00:00",
+        "last_name" : "",
+        "password" : "sha1$644c9$347f3dd85fb609a5745ebe33d0791929bf08f22e",
+        "user_permissions" : [  ],
+        "username" : "user"
+      },
+    "model" : "auth.user",
+    "pk" : 1
+  },
+  { "fields" : 
+      { "date_joined" : "2010-01-01 12:00:00",
+        "email" : "",
+        "first_name" : "",
+        "groups" : [ 1 ],
+        "is_active" : true,
+        "is_staff" : false,
+        "is_superuser" : false,
+        "last_login" : "2010-01-01 12:00:00",
+        "last_name" : "",
+        "password" : "sha1$e6fe2$78b744e21cddb39117997709218f4c6db4e91894",
+        "user_permissions" : [  ],
+        "username" : "cleaner"
+      },
+    "model" : "auth.user",
+    "pk" : 2
+  },
+  { "fields" : 
+      { "date_joined" : "2010-01-01 12:00:00",
+        "email" : "",
+        "first_name" : "",
+        "groups" : [  ],
+        "is_active" : true,
+        "is_staff" : true,
+        "is_superuser" : false,
+        "last_login" : "2010-01-01 12:00:00",
+        "last_name" : "",
+        "password" : "sha1$8894d$c4814980edd6778f0ab1632c4270673c0fd40efe",
+        "user_permissions" : [  ],
+        "username" : "staff"
+      },
+    "model" : "auth.user",
+    "pk" : 3
+  },
+  { "fields" : 
+     { "date_joined" : "2010-01-01 12:00:00",
+        "email" : "",
+        "first_name" : "",
+        "groups" : [  ],
+        "is_active" : true,
+        "is_staff" : true,
+        "is_superuser" : true,
+        "last_login" : "2010-01-01 12:00:00",
+        "last_name" : "",
+        "password" : "sha1$52c7f$59b4f64ffca593e6abd23f90fd1f95cf71c367a4",
+        "user_permissions" : [  ],
+        "username" : "admin"
+      },
+    "model" : "auth.user",
+    "pk" : 4
+  },
