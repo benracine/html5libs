@@ -4,7 +4,7 @@
         "description" : "This website aspires to be the best single resource on cataloguing web-based visualization tools",
         "is_locked" : false,
         "modified" : "2010-01-01 12:00:00",
-        "slug" : "Visualization",
+        "slug" : "visualization",
         "title" : "Visualization"
       }, "model" : "grid.grid",
     "pk" : 1
@@ -141,7 +141,7 @@
         "repo_forks" : 0,
         "repo_url" : "2",
         "repo_watchers" : 0,
-        "slug": "Dygraphs",
+        "slug": "dygraphs",
         "title": "Dygraphs"
       },
     "model" : "package.package",
@@ -168,7 +168,7 @@
         "repo_forks" : 0,
         "repo_url" : "3",
         "repo_watchers" : 0,
-        "slug": "JSXGraph",
+        "slug": "jsxgraph",
         "title": "JSXGraph"
       },
     "model" : "package.package",
@@ -195,7 +195,7 @@
         "repo_forks" : 0,
         "repo_url" : "4",
         "repo_watchers" : 0,
-        "slug": "gRaphael",
+        "slug": "graphael",
         "title": "gRaphael"
       },
     "model" : "package.package",
@@ -222,7 +222,7 @@
         "repo_forks" : 0,
         "repo_url" : "5",
         "repo_watchers" : 0,
-        "slug": "Protovis",
+        "slug": "protovis",
         "title": "Protovis"
       },
     "model" : "package.package",
@@ -249,7 +249,7 @@
         "repo_forks" : 0,
         "repo_url" : "6",
         "repo_watchers" : 0,
-        "slug": "GoogleCharts",
+        "slug": "googlecharts",
         "title": "GoogleCharts"
       },
     "model" : "package.package",
@@ -276,7 +276,7 @@
         "repo_forks" : 0,
         "repo_url" : "7",
         "repo_watchers" : 0,
-        "slug": "JIT",
+        "slug": "jit",
         "title": "JIT"
       },
     "model" : "package.package",
@@ -299,11 +299,11 @@
         "pypi_downloads" : 0,
         "pypi_url" : "",
         "repo_commits" : 0,
-        "repo_description" : "Elycharts is a pure javascript charting library, easy to use and completely customizable.  It helps you create good looking interactive charts on you web pages or web applications, with a lot of useful features: legend and label support, mouse tracking, tooltips, templates and animations.",
+        "repo_description" : "test",
         "repo_forks" : 0,
         "repo_url" : "8",
         "repo_watchers" : 0,
-        "slug": "dhtmlxChart",
+        "slug": "dhtmlxchart",
         "title": "dhtmlxChart"
       },
     "model" : "package.package",
@@ -330,7 +330,7 @@
         "repo_forks" : 0,
         "repo_url" : "9",
         "repo_watchers" : 0,
-        "slug": "Elycharts",
+        "slug": "elycharts",
         "title": "Elycharts"
       },
     "model" : "package.package",
@@ -357,7 +357,7 @@
         "repo_forks" : 0,
         "repo_url" : "10",
         "repo_watchers" : 0,
-        "slug": "Highcharts",
+        "slug": "highcharts",
         "title": "Highcharts"
       },
     "model" : "package.package",
@@ -384,7 +384,7 @@
         "repo_forks" : 0,
         "repo_url" : "11",
         "repo_watchers" : 0,
-        "slug": "JSCharts",
+        "slug": "jscharts",
         "title": "JSCharts"
       },
     "model" : "package.package",
