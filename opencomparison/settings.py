@@ -9,7 +9,7 @@ from django.template.defaultfilters import slugify
 
 PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
 
-DEBUG = True
+DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 # serve media through the staticfiles app.
@@ -86,7 +86,6 @@ if DEBUG:
             'django.template.loaders.app_directories.Loader',
     )
 else:
-    CACHE_BACKEND = 'dummy://'
     TEMPLATE_LOADERS = (
             'django.template.loaders.filesystem.Loader',
             'django.template.loaders.app_directories.Loader',
