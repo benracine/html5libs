@@ -23,11 +23,11 @@
   },
   { "fields" : 
       { "created" : "2010-01-01 12:00:00",
-        "description" : "Model View Controller Libraries", 
+        "description" : "Client-side model view controller Libraries", 
         "is_locked" : false,
         "modified" : "2010-01-01 12:00:00",
-        "slug" : "mvc",
-        "title" : "MVC"
+        "slug" : "mvc-client",
+        "title" : "MVC-Client"
       }, 
     "model" : "grid.grid",
     "pk" : 3
@@ -155,7 +155,7 @@
   },
   { "fields" : 
       { "created" : "2010-01-01 12:00:00",
-        "description" : "Server-side web framework libraries",
+        "description" : "Server-side web frameworks",
         "is_locked" : false,
         "modified" : "2010-01-01 12:00:00",
         "slug" : "server-side-web-framework",
@@ -166,13 +166,58 @@
   },
   { "fields" : 
       { "created" : "2010-01-01 12:00:00",
-        "description" : "Libraries",
+        "description" : "WebGL libraries",
+        "is_locked" : false,
         "modified" : "2010-01-01 12:00:00",
-        "slug" : "libraries",
-        "title" : "Libraries"
-      },
-    "model" : "package.category",
-    "pk" : 1
+        "slug" : "webgl",
+        "title" : "WebGL"
+      }, 
+    "model" : "grid.grid",
+    "pk" : 16
+  },
+  { "fields" : 
+      { "created" : "2010-01-01 12:00:00",
+        "description" : "Database libraries",
+        "is_locked" : false,
+        "modified" : "2010-01-01 12:00:00",
+        "slug" : "database",
+        "title" : "Database"
+      }, 
+    "model" : "grid.grid",
+    "pk" : 17
+  },
+  { "fields" : 
+      { "created" : "2010-01-01 12:00:00",
+        "description" : "Charting libraries",
+        "is_locked" : false,
+        "modified" : "2010-01-01 12:00:00",
+        "slug" : "charting",
+        "title" : "Charting"
+      }, 
+    "model" : "grid.grid",
+    "pk" : 18
+  },
+  { "fields" : 
+      { "created" : "2010-01-01 12:00:00",
+        "description" : "NoSQL libraries",
+        "is_locked" : false,
+        "modified" : "2010-01-01 12:00:00",
+        "slug" : "nosql",
+        "title" : "NoSQL"
+      }, 
+    "model" : "grid.grid",
+    "pk" : 19
+  },
+  { "fields" : 
+      { "created" : "2010-01-01 12:00:00",
+        "description" : "DOM manipulation libraries",
+        "is_locked" : false,
+        "modified" : "2010-01-01 12:00:00",
+        "slug" : "dom",
+        "title" : "DOM"
+      }, 
+    "model" : "grid.grid",
+    "pk" : 19
   },
   { "fields" : 
       { "name" : "Moderators",
@@ -544,6 +589,132 @@
       },
     "model" : "package.package",
     "pk" : 11
+  },
+  { "fields" :
+      { "category" : 1,
+        "modified": "2010-01-01 12:00:00",
+        "created": "2010-01-01 12:00:00",
+        "participants" : "",
+        "pypi_downloads" : 0,
+        "pypi_url" : "",
+        "repo_commits" : 0,
+        "repo_description" : "",
+        "repo_forks" : 0,
+        "repo_url" : "https://github.com/gskinner/EaselJS",
+        "repo_watchers" : 0,
+        "slug": "easeljs",
+        "title": "EaselJS"
+      },
+    "model" : "package.package",
+    "pk" : 12
+  },
+  { "fields" :
+      { "category" : 1,
+        "modified": "2010-01-01 12:00:00",
+        "created": "2010-01-01 12:00:00",
+        "participants" : "",
+        "pypi_downloads" : 0,
+        "pypi_url" : "",
+        "repo_commits" : 0,
+        "repo_description" : "",
+        "repo_forks" : 0,
+        "repo_url" : "https://github.com/jeresig/processing-js",
+        "repo_watchers" : 0,
+        "slug": "processingjs",
+        "title": "ProcessingJS"
+      },
+    "model" : "package.package",
+    "pk" : 13
+  },
+  { "fields" :
+      { "category" : 1,
+        "modified": "2010-01-01 12:00:00",
+        "created": "2010-01-01 12:00:00",
+        "participants" : "",
+        "pypi_downloads" : 0,
+        "pypi_url" : "",
+        "repo_commits" : 0,
+        "repo_description" : "",
+        "repo_forks" : 0,
+        "repo_url" : "https://github.com/mrdoob/three.js",
+        "repo_watchers" : 0,
+        "slug": "threejs",
+        "title": "ThreeJS"
+      },
+    "model" : "package.package",
+    "pk" : 14
+  },
+  { "fields" :
+      { "category" : 1,
+        "modified": "2010-01-01 12:00:00",
+        "created": "2010-01-01 12:00:00",
+        "participants" : "",
+        "pypi_downloads" : 0,
+        "pypi_url" : "",
+        "repo_commits" : 0,
+        "repo_description" : "",
+        "repo_forks" : 0,
+        "repo_url" : "https://github.com/joyent/node.js",
+        "repo_watchers" : 0,
+        "slug": "node",
+        "title": "Node"
+      },
+    "model" : "package.package",
+    "pk" : 15
+  },
+  { "fields" :
+      { "created" : "2010-01-01 12:00:00",
+        "grid" : 4,
+        "modified" : "2010-01-01 12:00:00",
+        "package" : 12
+      },
+    "model" : "grid.gridpackage",
+    "pk" : 16
+  },
+  { "fields" :
+      { "created" : "2010-01-01 12:00:00",
+        "grid" : 4,
+        "modified" : "2010-01-01 12:00:00",
+        "package" : 12
+      },
+    "model" : "grid.gridpackage",
+    "pk" : 12
+  },
+  { "fields" :
+      { "created" : "2010-01-01 12:00:00",
+        "grid" : 4,
+        "modified" : "2010-01-01 12:00:00",
+        "package" : 13
+      },
+    "model" : "grid.gridpackage",
+    "pk" : 13
+  },
+  { "fields" :
+      { "created" : "2010-01-01 12:00:00",
+        "grid" : 16,
+        "modified" : "2010-01-01 12:00:00",
+        "package" : 13
+      },
+    "model" : "grid.gridpackage",
+    "pk" : 13
+  },
+  { "fields" :
+      { "created" : "2010-01-01 12:00:00",
+        "grid" : 4,
+        "modified" : "2010-01-01 12:00:00",
+        "package" : 14
+      },
+    "model" : "grid.gridpackage",
+    "pk" : 14
+  },
+  { "fields" :
+      { "created" : "2010-01-01 12:00:00",
+        "grid" : 16,
+        "modified" : "2010-01-01 12:00:00",
+        "package" : 14
+      },
+    "model" : "grid.gridpackage",
+    "pk" : 14
   },
   { "fields" :
       { "created" : "2010-01-01 12:00:00",
