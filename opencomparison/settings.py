@@ -86,7 +86,6 @@ if DEBUG:
             'django.template.loaders.app_directories.Loader',
     )
 else:
-    CACHE_BACKEND = 'dummy://'
     TEMPLATE_LOADERS = (
             'django.template.loaders.filesystem.Loader',
             'django.template.loaders.app_directories.Loader',
@@ -202,13 +201,6 @@ EMAIL_SUBJECT_PREFIX = '[Django Packages] '
 DEBUG_TOOLBAR_CONFIG = {
     "INTERCEPT_REDIRECTS": False,
 }
-
-if DEBUG:
-    CACHE_BACKEND = 'dummy://'
-    TEMPLATE_LOADERS = (
-            'django.template.loaders.filesystem.Loader',
-            'django.template.loaders.app_directories.Loader',
-    )
 
 #TEST_RUNNER = 'testrunner.OurTestRunner'
 TEST_RUNNER = 'testrunner.OurCoverageRunner'
