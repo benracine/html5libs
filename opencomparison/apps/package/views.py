@@ -339,7 +339,6 @@ def package_detail(request, slug, template_name="package/package.html"):
         )
 
 
-"""
 @login_required
 def delete_package(request, template_name="package/delete_package.html"):
 
@@ -348,7 +347,7 @@ def delete_package(request, template_name="package/delete_package.html"):
     
     return None
     
-
+    """
     new_package = Package()
     form = PackageForm(request.POST or None, instance=new_package)
     
