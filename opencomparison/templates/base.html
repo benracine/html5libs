@@ -2,8 +2,8 @@
 {% load i18n %}
 {% load packaginator_tags %}
 {% load profile_tags %}
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" dir="{% if LANGUAGE_BIDI %}rtl{% else %}ltr{% endif %}" xml:lang="{{ LANGUAGE_CODE }}" lang="{{ LANGUAGE_CODE }}">
+<!DOCTYPE html> <!--PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd" -->
+<html> <!-- xmlns="http://www.w3.org/1999/xhtml" dir="{% if LANGUAGE_BIDI %}rtl{% else %}ltr{% endif %}" xml:lang="{{ LANGUAGE_CODE }}" lang="{{ LANGUAGE_CODE }}"> -->
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
         <title>{% block head_title_base %}{{ SITE_TITLE }} : {% block head_title %}{% endblock %}{% endblock %}</title>
@@ -97,7 +97,7 @@
             <a href="http://django.opencomparison.org">Django</a>
             - <a href="http://pyramid.opencomparison.org">Pyramid</a>
             - <a href="http://plone.opencomparison.org">Plone</a>
-            - <a href="http://opencomparison.herokuapp.org">JavaScript Libraries</a>
+            - <a href="http://opencomparison.herokuapp.com">JavaScript Libraries</a>
             
         </div>
     </div>

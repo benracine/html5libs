@@ -39,7 +39,7 @@ def homepage(request, template_name="homepage.html"):
                 random_packages.append(Package.objects.get(id=package_id))
             except Package.DoesNotExist:
                 pass
-            if len(random_packages) == 5:
+            if len(random_packages) == 3:
                 break
                 
     try:
@@ -69,7 +69,7 @@ def homepage(request, template_name="homepage.html"):
 
     return render_to_response(
         template_name, {
-            "latest_packages":Package.objects.all().order_by('-created')[:5],
+            "latest_packages":Package.objects.all().order_by('-created')[:2],
             "random_packages": random_packages,
             "potw": potw,
             "gotw": gotw,

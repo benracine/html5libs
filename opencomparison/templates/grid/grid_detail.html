@@ -77,6 +77,7 @@
                         </td>
                     {% endfor %}
                 </td>
+                {% comment %}
                 <tr class="even">
                     <td>{% trans "Downloads" %}</td>
                     {% for grid_package in grid_packages %}
@@ -90,6 +91,7 @@
                         </td>
                     {% endfor %}
                 </tr>
+                {% endcomment %}
                 <tr class="odd">
                     <td>{% trans "Last updated" %}</td>
                     {% for grid_package in grid_packages %}
@@ -150,7 +152,8 @@
                             {% endfor %}                        
                         </td>
                     {% endfor %}
-                </tr>
+                </tr> 
+                {% comment %}
                 <tr class="even">
                     <td>{% trans "Docs on RTD" %}</td>
                     {% for grid_package in grid_packages %}
@@ -159,6 +162,7 @@
                         </td>
                     {% endfor %}
                 </tr>
+                {% endcomment %}
                 
                 {% include "grid/snippets/grid_row_header.html" %}
                 {% for feature in features %}
