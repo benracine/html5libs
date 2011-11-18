@@ -365,3 +365,28 @@ def ajax_grid_list(request, template_name="grid/ajax_grid_list.html"):
         },
         context_instance=RequestContext(request)
     )
+
+
+@login_required
+def delete_grid(request, template_name="grid/delete_grid.html"):
+    """Deletes a grid, requires user to be logged in.
+    """
+
+    if not request.user.get_profile().can_add_grid:
+        return HttpResponseForbidden("permission denied")
+    return None
+
+    """
+    new_grid = Grid()
+    form = GridForm(request.POST or None, instance=new_grid)    
+
+    if form.is_valid(): 
+        new_grid = form.save()
+        return HttpResponseRedirect(reverse('grid', kwargs={'slug':new_grid.slug}))
+
+    return render_to_response(template_name, { 
+        'form': form
+        },
+        context_instance=RequestContext(request))
+    """
+        
