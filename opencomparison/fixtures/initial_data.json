@@ -654,7 +654,7 @@
         "repo_commits" : 0,
         "repo_description" : "",
         "repo_forks" : 0,
-        "repo_url" : "https://github.com/joyent/node.js",
+        "repo_url" : "https://github.com/joyent/node",
         "repo_watchers" : 0,
         "slug": "node",
         "title": "Node"
@@ -687,7 +687,7 @@
         "package" : 13
       },
     "model" : "grid.gridpackage",
-    "pk" : 13
+    "pk" : 17
   },
   { "fields" :
       { "created" : "2010-01-01 12:00:00",
@@ -714,7 +714,7 @@
         "package" : 14
       },
     "model" : "grid.gridpackage",
-    "pk" : 14
+    "pk" : 15
   },
   { "fields" :
       { "created" : "2010-01-01 12:00:00",
