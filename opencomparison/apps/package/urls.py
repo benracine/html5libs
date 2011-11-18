@@ -5,6 +5,7 @@ from package.models import Package
 from package.views import (
                             add_example, 
                             add_package, 
+                            delete_package, 
                             ajax_package_list,                             
                             edit_package, 
                             edit_example, 
@@ -31,7 +32,12 @@ urlpatterns = patterns("",
         name    = "latest_packages",          
     ),
     
-    
+    url(
+        regex   = "^delete/$",
+        view    = delete_package,
+        name    = "delete_package",
+    ),    
+
     url(
         regex   = "^add/$",
         view    = add_package,

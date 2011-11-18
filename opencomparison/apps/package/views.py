@@ -227,10 +227,8 @@ def ajax_package_list(request, template_name="package/ajax_package_list.html"):
 
 def usage(request, slug, action):
     success = False
-    # Check if the user is authenticated, redirecting them to the login page if
-    # they're not.
+    # Check if the user is authenticated, redirecting them to the login page if they're not.
     if not request.user.is_authenticated():
-        
         url = settings.LOGIN_URL
         referer = request.META.get('HTTP_REFERER')
         if referer:
@@ -247,8 +245,7 @@ def usage(request, slug, action):
     
     package = get_object_or_404(Package, slug=slug)
     
-    # Update the current user's usage of the given package as specified by the
-    # request.
+    # Update the current user's usage of the given package as specified by the request.
     if package.usage.filter(username=request.user.username):
         if action.lower() == 'add':
             # The user is already using the package
@@ -282,11 +279,9 @@ def usage(request, slug, action):
         response = {'success': success}
         if success:
             response['change'] = change
-            
         return HttpResponse(simplejson.dumps(response))
     
-    # Intelligently determine the URL to redirect the user to based on the
-    # available information.
+    # Intelligently determine the URL to redirect the user to based on the available information.
     next = request.GET.get('next') or request.META.get("HTTP_REFERER") or reverse("package", kwargs={"slug": package.slug})
     return HttpResponseRedirect(next)
     

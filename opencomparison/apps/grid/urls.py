@@ -14,6 +14,7 @@ from grid.views import (
         ajax_grid_list,
         delete_feature,
         delete_grid_package,
+        delete_grid,
         edit_element,
         edit_grid,
         edit_feature,
@@ -24,7 +25,12 @@ from grid.views import (
 
 urlpatterns = patterns("",
 
-    
+    url(
+        regex = '^delete/$',
+        view    = delete_grid,
+        name    = 'delete_grid',
+    ),    
+
     url(
         regex = '^add/$',
         view    = add_grid,
