@@ -132,3 +132,20 @@ class Profile(BaseModel):
         if getattr(settings, 'RESTRICT_GRID_EDITORS', False):
             return self.user.has_perm('grid.change_element')
         return True
+
+
+    # Extra abilities to delete, not included above, BJR
+    def can_delete_package(self):
+        if getattr(settings, 'RESTRICT_DELETION', False):
+            return self.user.has_perm('grid.delete_package')
+        return True
+
+    def can_delete_grid(self):
+        if getattr(settings, 'RESTRICT_DELETION', False):
+            return self.user.has_perm('grid.delete_grid')
+        return True
+
+    def can_delete_element(self):
+        if getattr(settings, 'RESTRICT_DELETION', False):
+            return self.user.has_perm('grid.delete_element')
+        return True

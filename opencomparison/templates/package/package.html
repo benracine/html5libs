@@ -62,6 +62,7 @@
             </tbody>        
          </table>
 
+        {% comment %}
         {% if package.pypi_url and package.pypi_url != "http://pypi.python.org/pypi/" %}
                 <h2>PyPI {% if package.pypi_downloads %}{% blocktrans with package.pypi_downloads as pypi_downloads %}( {{ pypi_downloads }} downloads ){% endblocktrans %}{% endif %}</h2>                           
                 <p><a href="{{ package.pypi_url }}">{{ package.pypi_url }}</a></p>
@@ -84,6 +85,7 @@
         {% else %}
             <h2>{% trans "No PyPI release" %}</h2>
         {% endif %}
+        {% endcomment %}
 
         <h2>{% trans "Participants" %}</h2>
 

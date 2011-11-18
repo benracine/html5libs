@@ -231,6 +231,9 @@ RESTRICT_PACKAGE_EDITORS = False
 # only django admins can delete
 RESTRICT_GRID_EDITORS = False
 
+# to open up deletion rights, set to False
+RESTRICT_DELETION = False
+
 # package extenders are dicts that can include:
     # form
     # model

@@ -102,6 +102,7 @@
                         </td>
                     {% endfor %}
                 </tr>
+                {% comment %}
                 <tr class="even">
                     <td>{% trans "Version" %}</td>
                     {% for grid_package in grid_packages %}
@@ -109,6 +110,7 @@
                     {% endfor %}
             
                 </tr>
+                {% endcomment %}
                 <tr class="odd">
                     <td>{% trans "Repo" %}</td>
                     {% for grid_package in grid_packages %}
