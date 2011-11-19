@@ -4,9 +4,9 @@ from django.contrib.auth.decorators import login_required, permission_required
 from django.contrib.auth.models import User 
 from django.core.urlresolvers import reverse 
 from django.http import HttpResponseRedirect, Http404, HttpResponseForbidden
+from django.http import HttpResponse
 from django.shortcuts import render_to_response, get_object_or_404 
 from django.template import RequestContext 
-
 
 from grid.forms import ElementForm, FeatureForm, GridForm, GridPackageForm
 from grid.models import Element, Feature, Grid, GridPackage
@@ -154,6 +154,7 @@ def edit_grid(request, slug, template_name="grid/edit_grid.html"):
         }, 
         context_instance=RequestContext(request))  
         
+        
 @login_required
 def add_feature(request, grid_slug, template_name="grid/add_feature.html"):
     """Adds a feature to the grid, accepts GET and POST requests.
@@ -260,8 +261,7 @@ def edit_element(request, feature_id, package_id, template_name="grid/edit_eleme
     feature = get_object_or_404(Feature, pk=feature_id)
     grid_package = get_object_or_404(GridPackage, pk=package_id)    
 
-    # Sanity check to make sure both the feature and grid_package are related to
-    # the same grid!
+    # Sanity check to make sure both the feature and grid_package are related to the same grid!
     if feature.grid_id != grid_package.grid_id:
         raise Http404
 
@@ -313,8 +313,6 @@ def add_grid_package(request, grid_slug, template_name="grid/add_grid_package.ht
                 return HttpResponseRedirect(redirect)
             
             return HttpResponseRedirect(reverse('grid', kwargs={'slug':grid.slug}))
-    
-
 
     return render_to_response(template_name, { 
         'form': form,
@@ -368,29 +366,14 @@ def ajax_grid_list(request, template_name="grid/ajax_grid_list.html"):
 
 
 @login_required
-def delete_grid(request, slug, template_name="grid/delete_grid.html"):
+def delete_grid(request, slug): 
     """Deletes a grid, requires user to be logged in.
     """
-    response = HttpResponse()
-    response.write("<html>")
-    response.write("This is a tiny little webpage")
-    response.write("</html>")
-    return response
 
-    """
-    if not request.user.get_profile().can_add_grid:
+    if not request.user.get_profile().can_delete_package:
         return HttpResponseForbidden("permission denied")
-    return "I would delete this if I knew how"
 
-    new_grid = Grid()
-    form = GridForm(request.POST or None, instance=new_grid)    
+    grid_to_delete = Grid.objects.filter(slug=slug)
+    grid_to_delete.delete()
 
-    if form.is_valid(): 
-        new_grid = form.save()
-        return HttpResponseRedirect(reverse('grid', kwargs={'slug':new_grid.slug}))
-
-    return render_to_response(template_name, { 
-        'form': form
-        },
-        context_instance=RequestContext(request))
-    """
+    return HttpResponseRedirect('/grids/')

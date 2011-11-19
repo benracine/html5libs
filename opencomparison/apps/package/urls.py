@@ -33,12 +33,6 @@ urlpatterns = patterns("",
     ),
     
     url(
-        regex   = "^delete/$",
-        view    = delete_package,
-        name    = "delete_package",
-    ),    
-
-    url(
         regex   = "^add/$",
         view    = add_package,
         name    = "add_package",
@@ -86,5 +80,10 @@ urlpatterns = patterns("",
         name    = "usage",
     ),
    
-        
+    url(
+        regex = '^p/(?P<slug>[-\w]+)/delete$',
+        view    = delete_package,
+        name    = 'delete_package',
+    ),
+
 )

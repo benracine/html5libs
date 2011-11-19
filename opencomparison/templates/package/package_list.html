@@ -56,7 +56,7 @@
                     {% endif %}
                     <td>{{ package.repo_watchers|default:"n/a" }}</td>
                     <td>{{ package.repo_forks|default:"n/a" }}</td>
-                    <td><a href="{% url package package.slug %}">{{ package.title }}</a></td>
+                    <td><a href="{% url delete_package package.slug %}">{{ package.title }}</a></td>
                 </tr>    
             {% endfor %}        
          </table>    
