@@ -209,6 +209,7 @@
                 <tr>
                     <th>{% trans "Feature" %}</th>
                     <th>{% trans "Description" %}</th>
+                    <th>{% trans "Delete" %}</th>
                 </tr> 
             </thead>
             <tbody>
@@ -220,14 +221,13 @@
                         {% endif %}
                         </td>
                         <td>{{ feature.description|wordwrap:80|linebreaksbr }}</td>
+                        <td> <a href="{% url delete_feature feature.pk %}"/>{{ feature.description|wordwrap:80|linebreaksbr }}</td>
                     </tr>
                 {% endfor %}
             </tbody>
         </table>
         {% if request.user.is_authenticated and profile.can_add_grid_feature %}        
-
             <p><img src="{{ STATIC_URL }}img/icon_addlink.gif" />&nbsp;<a href="{% url add_feature grid.slug %}">{% trans "Add new feature to the grid" %}</a></p>
-
         {% endif %}            
     {% else %}
         {% if request.user.is_authenticated and profile.can_add_grid_feature %}        
