@@ -388,7 +388,7 @@ def delete_feature(request, id):
         return HttpResponseForbidden("permission denied")
 
     feature_to_delete = Feature.objects.filter(pk=id)
-    feature_to_delete.delet()
+    feature_to_delete.delete()
 
     return HttpResponseRedirect('/grids/')
         
