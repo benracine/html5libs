@@ -368,13 +368,13 @@ def ajax_grid_list(request, template_name="grid/ajax_grid_list.html"):
 
 
 @login_required
-def delete_grid(request, template_name="grid/delete_grid.html"):
+def delete_grid(request, slug, template_name="grid/delete_grid.html"):
     """Deletes a grid, requires user to be logged in.
     """
 
     if not request.user.get_profile().can_add_grid:
         return HttpResponseForbidden("permission denied")
-    return None
+    return "I would delete this if I knew how"
 
     """
     new_grid = Grid()

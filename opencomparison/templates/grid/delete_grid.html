@@ -7,13 +7,14 @@
 
 {% block body %}
 
+    <p> I will learn how to delete soon </p>
+
+    {% comment %}
     <h1>{% trans "Add new grid" %}</h1>
     
     {% blocktrans %}
     <p>Grids added here are publicly listed on the <a href="/grids">Grids Home Page</a>.</p>
-    {% comment %}
     <p>Periodically, the {{ SITE_TITLE }} team will add some of these grids to the top navigation bar!</p>
-    {% endcomment %}
     {% endblocktrans %}
     
     <form class="uniForm" method="post">
@@ -26,6 +27,7 @@
         </fieldset>
 
     </form>
+    {% endcomment %}
 
 {% endblock %}
 
@@ -37,4 +39,3 @@
     });    
 </script>      
 {% endblock %}      
-        

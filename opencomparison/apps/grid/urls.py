@@ -25,11 +25,6 @@ from grid.views import (
 
 urlpatterns = patterns("",
 
-    url(
-        regex = '^delete/$',
-        view    = delete_grid,
-        name    = 'delete_grid',
-    ),    
 
     url(
         regex = '^add/$',
@@ -117,6 +112,12 @@ urlpatterns = patterns("",
         regex = '^g/(?P<slug>[-\w]+)/$',
         view    = grid_detail,
         name    = 'grid',
+    ),    
+
+    url(
+        regex = '^g/(?P<slug>[-\w]+)/delete$',
+        view    = delete_grid,
+        name    = 'delete_grid',
     ),    
 )
     

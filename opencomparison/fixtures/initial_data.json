@@ -1,4 +1,14 @@
 [
+  { "fields" :
+      { "created" : "2010-01-01 12:00:00",
+        "description" : "Libraries",
+        "modified" : "2010-01-01 12:00:00",
+        "slug" : "libraries",
+        "title" : "Libraries"
+      },
+    "model" : "package.category",
+    "pk" : 1
+  },
   { "fields" : 
       { "created" : "2010-01-01 12:00:00",
         "description" : "Libraries for charting and/or data visualization",
