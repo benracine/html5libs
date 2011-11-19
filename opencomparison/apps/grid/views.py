@@ -391,4 +391,4 @@ def delete_feature(request, feature_title, grid_slug):
     feature_to_delete.delete()
 
     redirect = '/grids/g/' + grid_slug
-    return HttpResponseRedirect(redirect)
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER','/'))
