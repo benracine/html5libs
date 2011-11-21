@@ -57,6 +57,12 @@ urlpatterns = patterns("",
     ), 
     
     url(
+        regex = '^package/(?P<id>\d+)/delete/$',
+        view    = delete_grid_package,
+        name    = 'delete_grid_package',
+    ),       
+
+    url(
         regex = '^(?P<grid_slug>[a-z0-9\-\_]+)/package/add/$',
         view    = add_grid_package,
         name    = 'add_grid_package',
@@ -112,14 +118,7 @@ urlpatterns = patterns("",
         regex = '^feature/(?P<id>\d+)/delete/$',
         view    = delete_feature,
         name    = 'delete_feature',
-    ),
-
-    url(
-        regex = '^package/(?P<id>\d+)/delete/$',
-        view    = delete_package,
-        name    = 'delete_package',
-    ),       
-
+    )
 )
     
 """
