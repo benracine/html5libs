@@ -341,7 +341,7 @@ def package_detail(request, slug, template_name="package/package.html"):
 
 @login_required
 def delete_package(request, slug): 
-    """Deletes a package, requires user to be logged in.
+    """Deletes a grid, requires user to be logged in.
     """
 
     if not request.user.get_profile().can_delete_package:
@@ -351,3 +351,17 @@ def delete_package(request, slug):
     package_to_delete.delete()
 
     return HttpResponseRedirect('/packages/')
+
+
+
+@login_required
+def delete_package(request, slug): 
+    """Deletes a grid, requires user to be logged in.
+    """
+
+    if not request.user.get_profile().can_delete_package:
+        return HttpResponseForbidden("permission denied")
+
+    package_to_delete = Package.objects.filter(slug=slug)
+    package_to_delete.delete()
+
