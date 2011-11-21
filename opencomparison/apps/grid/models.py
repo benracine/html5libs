@@ -62,6 +62,7 @@ class Grid(BaseModel):
     class Meta:
         ordering = ['title']
 
+
 class GridPackage(BaseModel):
     """Grid package.
     This model describes packages listed on one side of the grids
@@ -91,6 +92,7 @@ class GridPackage(BaseModel):
     def __unicode__(self):
         return '%s : %s' % (self.grid.slug, self.package.slug)
     
+
 class Feature(BaseModel):
     """ These are the features measured against a grid.
     ``Feature`` has the following attributes:
@@ -111,6 +113,7 @@ class Feature(BaseModel):
     def __unicode__(self):
         return '%s : %s' % (self.grid.slug, self.title)    
     
+
 help_text = """
 Linebreaks are turned into 'br' tags<br />
 Urls are turned into links<br />

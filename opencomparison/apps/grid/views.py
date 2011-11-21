@@ -386,8 +386,6 @@ def delete_feature(request, id): #, feature_title, grid_slug):
         return HttpResponseForbidden("permission denied")
     """
     
-    import pdb
-    pdb.set_trace()
     feature_to_delete = Feature.objects.filter(pk=id)
     feature_to_delete.delete()
     return HttpResponseRedirect(request.META.get('HTTP_REFERER','/'))

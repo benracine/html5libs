@@ -221,9 +221,7 @@
                         {% endif %}
                         </td>
                         <td>{{ feature.description|wordwrap:80|linebreaksbr }}</td>
-                        {% comment %}
-                        <td> <a href="{% url delete_feature %}"/>{{ feature.title|wordwrap:80|linebreaksbr }}</td>
-                        {% endcomment %}
+                        <td> <a href="{% url delete_feature feature.id %}"/>Delete {{ feature.title|wordwrap:80|linebreaksbr }} Feature</td>
                     </tr>
                 {% endfor %}
             </tbody>
