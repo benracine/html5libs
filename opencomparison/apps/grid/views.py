@@ -380,7 +380,7 @@ def delete_grid(request, slug):
 
 
 @login_required
-def delete_feature(request, id): #, feature_title, grid_slug):
+def delete_feature(request, id): 
     if not request.user.get_profile().can_edit_grid_feature:
         return HttpResponseForbidden("permission denied")
     

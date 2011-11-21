@@ -341,7 +341,7 @@ def package_detail(request, slug, template_name="package/package.html"):
 
 @login_required
 def delete_package(request, slug): 
-    """Deletes a grid, requires user to be logged in.
+    """Deletes a package, requires user to be logged in.
     """
 
     if not request.user.get_profile().can_delete_package:
