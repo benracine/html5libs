@@ -222,7 +222,7 @@
                         </td>
                         <td>{{ feature.description|wordwrap:80|linebreaksbr }}</td>
                         {% comment %}
-                        <td> <a href="{% url delete_feature feature.title grid.slug %}"/>{{ feature.description|wordwrap:80|linebreaksbr }}</td>
+                        <td> <a href="{% url delete_feature %}"/>{{ feature.title|wordwrap:80|linebreaksbr }}</td>
                         {% endcomment %}
                     </tr>
                 {% endfor %}

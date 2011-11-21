@@ -27,9 +27,11 @@
                 {% endcomment %}
                 <th>{% trans "Name" %}</th>
                 <th>{% trans "Commits" %}</th>
+                {% comment %}
                 {% if category.show_pypi %}                
                     <th>{% trans "Version" %}</th>
                 {% endif %}                    
+                {% endcomment %}
                 <th><img src="{{ STATIC_URL }}img/eye_20x20_clear.png" /></th>
                 <th><img src="{{ STATIC_URL }}img/fork_20x20_clear.png" /></th>
                 <th>{% trans "Delete" %}</th>
@@ -51,9 +53,11 @@
                     {% cache 86400 package.commitchart package %}                
                         <td><img id="package-githubcommits" src="http://chart.apis.google.com/chart?cht=bvg&chs=105x20&chd=t:{{package|commits_over_52}}&chco=666666&chbh=1,1,1&chds=0,20" /></td>
                     {% endcache %}      
+                    {% comment %}
                     {% if category.show_pypi %}
                         <td>{{ package.pypi_version.number|default:"n/a"|slice:":12" }}</td>
                     {% endif %}
+                    {% endcomment %}
                     <td>{{ package.repo_watchers|default:"n/a" }}</td>
                     <td>{{ package.repo_forks|default:"n/a" }}</td>
                     <td><a href="{% url delete_package package.slug %}">{{ package.title }}</a></td>

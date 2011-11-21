@@ -12,6 +12,7 @@
 {% endblock %}
 
 {% block body %}
+{% comment %}
 {% if warnings %}
     <ul class="messages">
         {% if pypi_ancient %}
@@ -25,6 +26,7 @@
         {% endif %}
     </ul>
 {% endif %}
+{% endcomment %}
 
     
 <h1><a href="{% url home %}">{% trans "home" %}</a> / <a href="{% url packages %}">{% trans "packages" %}</a> / {{ package.title }}

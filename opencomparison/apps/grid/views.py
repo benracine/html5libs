@@ -379,16 +379,15 @@ def delete_grid(request, slug):
     return HttpResponseRedirect('/grids/')
 
 
-@login_required
-def delete_feature(request, feature_title, grid_slug):
+#@login_required
+def delete_feature(request, id): #, feature_title, grid_slug):
     """
-
     if not request.user.get_profile().can_edit_grid_feature:
         return HttpResponseForbidden("permission denied")
     """
-
-    feature_to_delete = Feature.objects.filter(title=feature_title)
+    
+    feature_to_delete = Feature.objects.filter(pk=id)
     feature_to_delete.delete()
 
-    redirect = '/grids/g/' + grid_slug
-    return HttpResponseRedirect(request.META.get('HTTP_REFERER','/'))
+    redirect = '/'
+    return HttpResponseRedirect(redirect) #request.META.get('HTTP_REFERER','/'))

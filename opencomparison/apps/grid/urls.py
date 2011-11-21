@@ -57,12 +57,6 @@ urlpatterns = patterns("",
     ), 
     
     url(
-        regex = '^feature/(?P<id>\d+)/delete/$',
-        view    = delete_feature,
-        name    = 'delete_feature',
-    ),       
-
-    url(
         regex = '^package/(?P<id>\d+)/delete/$',
         view    = delete_grid_package,
         name    = 'delete_grid_package',
@@ -119,6 +113,12 @@ urlpatterns = patterns("",
         view    = delete_grid,
         name    = 'delete_grid',
     ),    
+
+    url(
+        regex = '^feature/(?P<id>\d+)/delete/$',
+        view    = delete_feature,
+        name    = 'delete_feature',
+    )
 )
     
 """
