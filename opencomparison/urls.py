@@ -14,7 +14,6 @@ urlpatterns = patterns("",
 
     url('', include('social_auth.urls')),
     url(r"^$", homepage, name="home"),
-    url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
     url(r"^admin/", include(admin.site.urls)),
     url(r"^profiles/", include("profiles.urls")),
     url(r"^packages/", include("package.urls")),
@@ -36,6 +35,8 @@ urlpatterns = patterns("",
     url(r"^search/", include("searchv2.urls")),
     url(r"^importer/", include("importer.urls")),
 )
+
+#    url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
 from apiv1.api import Api
 from apiv1.resources import (
