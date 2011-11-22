@@ -47,4 +47,4 @@ psycopg2==2.4.1
 Werkzeug
 gunicorn==0.12.2
 docutils
-
+fabric

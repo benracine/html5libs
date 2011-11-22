@@ -8,6 +8,7 @@ from package.models import Package
 
 from grid.tests import data
 
+
 class FunctionalGridTest(TestCase):
     def setUp(self):
         data.load()
@@ -76,6 +77,7 @@ class FunctionalGridTest(TestCase):
         self.assertEqual(Grid.objects.count(), count + 1)
         self.assertContains(response, 'TEST TITLE')
 
+
     def test_edit_grid_view(self):
         url = reverse('edit_grid', kwargs={'slug': 'testing'})
         response = self.client.get(url)
@@ -98,6 +100,7 @@ class FunctionalGridTest(TestCase):
         }, follow=True)
         self.assertEqual(Grid.objects.count(), count)
         self.assertContains(response, 'TEST TITLE')
+
 
     def test_add_feature_view(self):
         url = reverse('add_feature', kwargs={'grid_slug': 'testing'})
@@ -414,7 +417,9 @@ class GridFeaturePermissionTest(TestCase):
         response = self.client.get(self.test_delete_url)
         self.assertEqual(response.status_code, 302)
 
+
 class GridElementPermissionTest(TestCase):
+
     def setUp(self):
         data.load()
         settings.RESTRICT_GRID_EDITORS = True

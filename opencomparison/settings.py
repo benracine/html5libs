@@ -27,12 +27,12 @@ MANAGERS = ADMINS
 
 DATABASES = {
     "default": {
-        "ENGINE": "", # Add "postgresql_psycopg2", "postgresql", "mysql", "sqlite3" or "oracle".
-        "NAME": "",                       # Or path to database file if using sqlite3.
-        "USER": "",                             # Not used with sqlite3.
-        "PASSWORD": "",                         # Not used with sqlite3.
-        "HOST": "",                             # Set to empty string for localhost. Not used with sqlite3.
-        "PORT": "",                             # Set to empty string for default. Not used with sqlite3.
+        "ENGINE": "",              # Add "postgresql_psycopg2", "postgresql", "mysql", "sqlite3" or "oracle".
+        "NAME": "",                # Or path to database file if using sqlite3.
+        "USER": "",                # Not used with sqlite3.
+        "PASSWORD": "",            # Not used with sqlite3.
+        "HOST": "",                # Set to empty string for localhost. Not used with sqlite3.
+        "PORT": "",                # Set to empty string for default. Not used with sqlite3.
     }
 }
 
@@ -139,6 +139,7 @@ PROJECT_APPS = [
 ]
 
 PREREQ_APPS = [
+
     # Django
     "django.contrib.admin",
     "django.contrib.admindocs",
@@ -159,13 +160,9 @@ PREREQ_APPS = [
     "reversion",
     "django_sorting",
     "django_modeler",
-
-    # Celery task queue:
     'djcelery',
-
     'social_auth',
     'gunicorn',
-
 ]
 
 INSTALLED_APPS = PREREQ_APPS + PROJECT_APPS
