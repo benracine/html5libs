@@ -8,5 +8,5 @@
     <strong>{% trans "Features" %}:</strong> {{ grid.feature_set.count }}
   </p>
   <p class="description">{{ grid.description }}</p>
-  <p><a class="confirm" href="{% url delete_grid grid.slug%}" >Delete the {{grid.title}} grid</a></p>
+  <p><a href="{% url delete_grid grid.slug%} onclick="return confirm('Are you sure you want to delete?')"" >Delete the {{grid.title}} grid</a></p>
 </li>
