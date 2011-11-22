@@ -233,9 +233,8 @@ def delete_feature(request, id, template_name="grid/edit_feature.html"):
     return HttpResponseRedirect(reverse('grid', kwargs={'slug': feature.grid.slug}))
 
 
-@permission_required('grid.delete_gridpackage')
-#def delete_grid_package(request, id, template_name="grid/edit_feature.html"):
-def delete_grid_package(request, template_name="grid/edit_feature.html"):
+#@permission_required('grid.delete_gridpackage')
+def delete_grid_package(request, id, template_name="grid/edit_feature.html"):
     """Deletes package from the grid, ``id`` is the id of the 
     :class:`grid.models.GridPackage` instance
 
@@ -247,6 +246,7 @@ def delete_grid_package(request, template_name="grid/edit_feature.html"):
     # do not need to check permission via profile because
     # we default to being strict about deleting
     package = get_object_or_404(GridPackage, id=id)
+    print package
     Element.objects.filter(grid_package=package).delete()
     package.delete()
 
