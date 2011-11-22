@@ -234,7 +234,8 @@ def delete_feature(request, id, template_name="grid/edit_feature.html"):
 
 
 @permission_required('grid.delete_gridpackage')
-def delete_grid_package(request, id, template_name="grid/edit_feature.html"):
+#def delete_grid_package(request, id, template_name="grid/edit_feature.html"):
+def delete_grid_package(request, template_name="grid/edit_feature.html"):
     """Deletes package from the grid, ``id`` is the id of the 
     :class:`grid.models.GridPackage` instance
 
@@ -389,6 +390,7 @@ def delete_feature(request, id):
     return HttpResponseRedirect(request.META.get('HTTP_REFERER','/'))
 
 
+"""
 @login_required
 def delete_grid_package(request, grid_id, package_id): 
     if not request.user.get_profile().can_delete_grid_package:
@@ -397,3 +399,4 @@ def delete_grid_package(request, grid_id, package_id):
     grid_package_to_delete = GridPackage.objects.filter(grid=grid_id, package=package_id)
     grid_package_to_delete.delete()
     return HttpResponseRedirect(request.META.get('HTTP_REFERER','/'))
+"""
