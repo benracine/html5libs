@@ -1,3 +1,3 @@
 git add .
 git commit -am 'something'
-git push heroku master
+git push html5libs master
