@@ -55,7 +55,7 @@ def grid_detail(request, slug, template_name="grid/grid_detail.html"):
 
     gp = grid.gridpackage_set.select_related('gridpackage', 'package__repo', 'package__category')
     #grid_packages = gp.annotate(usage_count=Count('package__usage')).order_by('-usage_count', 'package')
-    grid_packages = gp.order_by('-repo_watchers','package')
+    grid_packages = gp.order_by('-repo_watchers')
 
     elements = Element.objects.all().filter(feature__in=features, grid_package__in=grid_packages)
 
