@@ -387,3 +387,13 @@ def delete_feature(request, id):
     feature_to_delete = Feature.objects.filter(pk=id)
     feature_to_delete.delete()
     return HttpResponseRedirect(request.META.get('HTTP_REFERER','/'))
+
+
+@login_required
+def delete_grid_package(request, grid_id, package_id): 
+    if not request.user.get_profile().can_delete_grid_package:
+        return HttpResponseForbidden("permission denied")
+
+    grid_package_to_delete = GridPackage.objects.filter(grid=grid_id, package=package_id)
+    grid_package_to_delete.delete()
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER','/'))

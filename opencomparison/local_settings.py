@@ -11,8 +11,8 @@ DATABASES = {
     }
 }
 
-FRAMEWORK_TITLE = "JavaScript"
-SITE_TITLE = "JavaScript Libraries"
+FRAMEWORK_TITLE = "HTML5"
+SITE_TITLE = "HTML5 Libraries"
 
 
 DEBUG = True
@@ -37,8 +37,8 @@ LAUNCHPAD_ACTIVE = False
 URCHIN_ID = ""
 
 # Email Settings
-DEFAULT_FROM_EMAIL = 'JavaScript Libraries <javascriptlibraries-noreply@javascriptlibraries.opencomparison.com>'
-EMAIL_SUBJECT_PREFIX = '[JavaScript Libraries] '
+DEFAULT_FROM_EMAIL = 'HTML5 Libraries <html5libraries-noreply@html5libraries.opencomparison.com>'
+EMAIL_SUBJECT_PREFIX = '[HTML5 Libraries] '
 
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = "bens_secret_password"
