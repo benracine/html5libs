@@ -20,7 +20,7 @@ INTERNAL_IPS = [
 ]
 
 ADMINS = [
-    # ("Your Name", "your_email@domain.com"),
+    ("Ben Racine", "ben.racine@cornerstonenw.com"),
 ]
 
 MANAGERS = ADMINS
@@ -103,6 +103,7 @@ MIDDLEWARE_CLASSES = [
     "django_sorting.middleware.SortingMiddleware",
 ]
 
+
 TEMPLATE_DIRS = [
     os.path.join(PROJECT_ROOT, "templates"),
 ]
@@ -140,6 +141,7 @@ PROJECT_APPS = [
 PREREQ_APPS = [
     # Django
     "django.contrib.admin",
+    "django.contrib.admindocs",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
