@@ -184,7 +184,7 @@ EMAIL_DEBUG = DEBUG
 
 CACHE_TIMEOUT = 60 * 60
 
-ROOT_URLCONF = "django_oc.urls"
+ROOT_URLCONF = "html5lib.urls"
 
 SECRET_KEY = "CHANGEME"
 
