@@ -13,7 +13,7 @@ DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 # serve media through the staticfiles app.
-SERVE_MEDIA = True
+SERVE_MEDIA = False
 
 INTERNAL_IPS = [
     "127.0.0.1",
@@ -222,15 +222,13 @@ PACKAGINATOR_HELP_TEXT = {
 
 PACKAGINATOR_SEARCH_PREFIX = "django"
 
-# if set to False any auth user can add/modify packages
-# only django admins can delete
+# if set to False any auth user can add/modify packages only django admins can delete
 RESTRICT_PACKAGE_EDITORS = False
 
-# if set to False  any auth user can add/modify grids
-# only django admins can delete
+# if set to False any auth user can add/modify grids only django admins can delete
 RESTRICT_GRID_EDITORS = False
 
-# to open up deletion rights, set to False
+# if set to False any auth user can perform delete operations
 RESTRICT_DELETION = False
 
 # package extenders are dicts that can include:
@@ -239,7 +237,6 @@ RESTRICT_DELETION = False
     # grid_items
     # package_displays
 PACKAGE_EXTENDERS = []
-
 
 CELERYD_TASK_TIME_LIMIT = 300
 LAUNCHPAD_ACTIVE = False

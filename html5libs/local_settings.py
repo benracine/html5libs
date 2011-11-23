@@ -15,9 +15,9 @@ FRAMEWORK_TITLE = "HTML5"
 SITE_TITLE = "Modern Client-Side Libraries"
 
 
-DEBUG = False
+DEBUG = True
 TEMPLATE_DEBUG = DEBUG
-SERVE_MEDIA = True
+SERVE_MEDIA = DEBUG
 #TEST_RUNNER = 'testrunner.OurTestRunner'
 
 logging.basicConfig(
