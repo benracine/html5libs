@@ -15,16 +15,16 @@
 {% block body %}
 <div class="twelve_column section">
     <div class="three column">
-        <h2><i>{{ SITE_TITLE }} is a directory of reusable tools for the greater open web community.</i></h2>
+        <h2><i>This is a directory of reusable tools for the open web community.</i></h2>
         <p><b>{{ package_count }}</b> {% trans "libraries and counting!" %}</p>
         <p>
-            {% trans "Know of any libraries not listed here?  Add them now!  It's quick and easy." %}
+            {% trans "Know of any libraries not listed here?  Add them now!  It's easy." %}
         </p>
         <p>
             <a class="large awesome forestgreen" href="{% url add_package %}">{% trans "add library »" %}</a>
         </p>
         <p>
-            {% trans "Or add a grid comparing the features of 2 or more similar libraries." %}
+            {% trans "Or add a grid comparing the features of similar libraries." %}
         </p>
         <p>
             <a class="large awesome forestgreen" href="{% url add_grid %}">{% trans "add grid »" %}</a>
@@ -84,7 +84,7 @@
              <div class="package-watchers">{{ potw.repo_watchers }}</div> 
              <p>{{ potw.repo_description }}</p>
          {% endif %}
-        <h3>How to get your {{ FRAMEWORK_TITLE }} library featured here</h3>
+        <h3>How to get your client-side library featured here</h3>
         <p>Do you have a library that you'd like us to feature? Does it have tests? Are the docs online? </p> <!-- <a href="http://rtfd.org">Read the Docs</a>?</p>-->
         <p>If so, tweet at <a href="http://twitter.com/html5libs">@html5libs</a> with a link, and make sure the description field in your repo has been filled out.</p>
     </div> <!-- three column (1st) -->
@@ -100,13 +100,14 @@
               <strong>{% trans "Features" %}:</strong> {{ gotw.feature_set.count }}
             </p>            
         {% endif %}
-        <h3>How to get your {{ SITE_TITLE }} grid featured here</h3>
+        <h3>Want a grid featured here?</h3>
         <p>Have you created a new and interesting grid?</p>
         <p>Tweet at <a href="http://twitter.com/html5libs">@html5libs</a> with a link.  We'll consider featuring it.
     </div> <!-- three column (2nd) -->
     <div class="one column"></div>
 
     <div class="three column">
+        {% comment %}
         <h2>{% trans "2 Most Recent Libraries" %}</h2>
         <table class="home-table">
         {% for package in latest_packages %}
@@ -132,14 +133,17 @@
             </tr>            
         {% endfor %}
         </table>
+        {% endcomment %}
     </div> <!-- three column (3rd) -->
     <div class="one column"></div>
 </div> <!-- twelve_column section -->
 
 <div class="twelve_column section">
     <div class="three column">
+        {% comment %}
        <h2>Public Service Announcements</h2>
        {{ psa_body|safe }}
+        {% endcomment %}
     </div> <!-- three column (1st) -->
     <div class="one column"></div>
 
@@ -149,10 +153,12 @@
     <div class="one column"></div>
 
     <div class="three column">
+        {% comment %}
         <h2>From the Official OpenComparison Blog</h2>
         <h3>{{ blogpost_title }}</h3>
         {{ blogpost_body|safe|truncatewords_html:50 }} 
         <p><a href="http://blog.opencomparison.org">read more...</a></p>
+        {% endcomment %}
     </div> <!-- three column (3rd) -->
     <div class="one column"></div>
 </div> <!-- twelve_column section -->

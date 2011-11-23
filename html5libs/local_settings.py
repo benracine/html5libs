@@ -3,7 +3,7 @@ import logging
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2", # Add "postgresql_psycopg2", "postgresql", "mysql", "sqlite3" or "oracle".
-        "NAME": "dev",          # Or path to database file if using sqlite3.
+        "NAME": "dep",          # Or path to database file if using sqlite3.
         "USER": "postgres",              # Not used with sqlite3.
         "PASSWORD": "",                  # Not used with sqlite3.
         "HOST": "localhost",             # Set to empty string for localhost. Not used with sqlite3.
@@ -12,7 +12,7 @@ DATABASES = {
 }
 
 FRAMEWORK_TITLE = "HTML5"
-SITE_TITLE = "HTML5 Libraries"
+SITE_TITLE = "Modern Client-Side Libraries"
 
 
 DEBUG = True
