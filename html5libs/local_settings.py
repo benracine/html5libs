@@ -37,7 +37,7 @@ LAUNCHPAD_ACTIVE = False
 URCHIN_ID = ""
 
 # Email Settings
-DEFAULT_FROM_EMAIL = 'HTML5 Libraries <html5libraries-noreply@html5libraries.opencomparison.com>'
+DEFAULT_FROM_EMAIL = 'HTML5 Libraries <html5libs@gmail.com>'
 EMAIL_SUBJECT_PREFIX = '[HTML5 Libraries] '
 
 # Make this unique, and don't share it with anybody.
