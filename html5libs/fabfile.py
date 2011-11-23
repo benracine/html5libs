@@ -14,7 +14,10 @@ def push():
     local("git push github master")
 
 def deploy(prudent=True):
-    commit()
+    try:
+        commit()
+    except:
+        pass
     local("git push heroku master")
 
 
