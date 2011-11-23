@@ -4,7 +4,8 @@ def test():
     local("./manage.py test")
 
 def commit():
-    local("git add . && git commit")
+    local("git add .")
+    local("git commit -a")
 
 def push_to_github():
     local("git push github master")

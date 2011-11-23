@@ -1,7 +1,0 @@
-./package/package_list.html:                    <td><a href="{% url delete_package package.slug %}" onclick="return confirm('Are you sure you want to delete?')" >{{ package.title }}</a></td>
-./package/package.html:                <td><a href="{% url delete_package package.slug %}" onclick="return confirm('Are you sure you want to delete?')" >{{ package.title }}</a></td>
-Binary file ./grid/.grid_detail.html.swp matches
-./grid/grid_detail.html:                        <td> <a href="{% url delete_feature feature.id %}" onclick="return confirm('Are you sure you want to delete?')" />Delete {{ feature.title|wordwrap:80|linebreaksbr }} Feature</td>
-./grid/snippets/grid.html:  <p><a href="{% url delete_grid grid.slug%}" onclick="return confirm('Are you sure you want to delete?')" >Delete the {{grid.title}} grid</a></p>
-./grid/grid_detail2.html:                                delete_confirmation(e, '{% url delete_feature feature.pk %}')                            
-./grid/grid_detail2.html:                                delete_confirmation(e, '{% url delete_grid_package grid_package.pk %}')
