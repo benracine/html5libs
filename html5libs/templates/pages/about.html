@@ -8,14 +8,13 @@
 
     <h1>About {{ SITE_TITLE }}</h1>
     
-    <p>{{ SITE_TITLE }} solves the problem in the {{ FRAMEWORK_TITLE }} community of being able to easily identify good 
-        apps, frameworks, and packages. Ever want to know which is the most popular or well supported {{ FRAMEWORK_TITLE }}  
-        blog, content management system, or api tool? {{ SITE_TITLE }} solves that problem for you!
+    <p>{{ SITE_TITLE }} addresses the problem in the community of being able to easily identify and compare good 
+        client-side software. 
     </p>
     
-    <h2>What is a {{ SITE_TITLE }}?</h2>
+    <h2>What is a modern client-side library?</h2>
     
-    <p>A {{ SITE_TITLE }} is anything that is involved in the {{ FRAMEWORK_TITLE }} ecosphere that can be stored on a 
+    <p>A modern client-side library is anything that solves a problem for you and/or others in the open web community that can be stored on a 
         repository such as Github or Bitbucket. 
         {% comment %}
         If it can be stored in <a href="http://pypi.org">PyPI</a>,
@@ -25,7 +24,7 @@
     
     <h2>When did you code this?</h2>
     
-    <p>Open Comparison was conceived for and coding during <a href="http://djangodash.com">Django Dash 2010</a>.
+    <p>This project is made possible by <a href="http://github.com/opencomparison/opencomparison">Open Comparison</a>, which was conceived for and coding during <a href="http://djangodash.com">Django Dash 2010</a>.
         Since then we've been feverishly adding more features, improving the design, and trying to make data entry
          as easy/intuitive as possible.
     </p>
@@ -33,19 +32,20 @@
     <h2>Who built this thing?</h2>
     
     <p>Daniel Greenfeld and Audrey Roy are the creators of this project. Additional contributing members are detailed in
-        the <a href="/help/team/">team page.</a>        
+        the <a href="/help/team/">team page.</a>  This version is a fork that doesn't currently aim to maintain compatability.       
     </p>
     
     <h2>Can I help?</h2>
     
     <p>
-        Open Comparison is an volunteer based <a href="http://github.com/opencomparison/opencomparison">open source effort</a>.
+        Open Comparison is a volunteer based <a href="http://github.com/opencomparison/opencomparison">open source effort</a>.
         Please <a href="http://github.com/opencomparison/opencomparison/issues">submit any ideas or issues</a> and 
         also fork and submit back patches and enhancements.
     </p>
 
+    {% comment %}
     <h2>I want to know more!</h2>    
-    
     <p>{{ SITE_TITLE }} also has a <a href="/help/">help</a> section.</p>
+    {% endcomment %}
         
 {% endblock %}
