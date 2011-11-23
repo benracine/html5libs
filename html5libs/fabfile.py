@@ -5,7 +5,11 @@ def test():
 
 def commit():
     local("git add .")
-    local("git commit -a")
+    try:
+        local("git commit -a")
+    except:
+        print "No changes were made"
+
 
 def push_to_github():
     local("git push github master")
