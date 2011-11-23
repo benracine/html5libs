@@ -21,8 +21,9 @@ def deploy(prudent=True):
     commit()
     local("git push heroku master")
 
+
 def deployment_syncdb():
-    local("heroku run python html5libs/manage.py migrate")
+    local("heroku run python html5libs/manage.py syncdb")
 
 def deployment_migrate():
     local("heroku run python html5libs/manage.py migrate")
