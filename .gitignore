@@ -2,5 +2,6 @@ bin
 build
 include
 lib
+hide
 .Python
 *.pyc
