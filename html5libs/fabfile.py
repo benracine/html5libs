@@ -14,6 +14,8 @@ def push():
     local("git push github master")
 
 def deploy(prudent=True):
+    """need to change debug from true to false
+    and change serve using static media from false to true"""
     try:
         commit()
     except:
