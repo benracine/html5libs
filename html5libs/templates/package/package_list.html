@@ -15,7 +15,7 @@
 {% block body %}
      
      {% for category in categories %}
-        <h2><a href="{% url category category.slug %}">{{ category.title_plural }}</a> ( {{ category.count }} )</h2>
+        <h2><a href="{% url category category.slug %}">{{ category.title }}</a> ( {{ category.count }} )</h2>
         <p>{{ category.description }}</p>
         <table id="home-packages">
             <tr>
