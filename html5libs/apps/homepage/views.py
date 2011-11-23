@@ -60,7 +60,7 @@ def homepage(request, template_name="homepage.html"):
     try:
         psa_body = PSA.objects.latest().body_text
     except PSA.DoesNotExist:
-        psa_body = '<p>There are currently no announcements.  To request a PSA, tweet at <a href="http://twitter.com/JSLibComp">@JSLibComp</a>.</p>'
+        psa_body = '<p>There are currently no announcements.  To request a PSA, tweet at <a href="http://twitter.com/html5libs">@html5libs</a>.</p>'
 
     # Latest OpenComparison blog post on homepage
     feed = 'http://opencomparison.blogspot.com/feeds/posts/default'
