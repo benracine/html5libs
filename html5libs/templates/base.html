@@ -28,7 +28,9 @@
                 {% if request.user.is_authenticated %}
                     <b>{{ profile.github_account }}</b> |
                     <a href="{% url faq %}">{% trans "FAQ" %}</a> |
+                    {% comment %}
                     <a href="{% url profile_detail profile.github_account %}">{% trans "Profile" %}</a> |
+                    {% endcomment %}
                     {% if request.user.is_staff %}
                         <a href="/admin/">{% trans "Admin" %}</a> |
                     {% endif %}

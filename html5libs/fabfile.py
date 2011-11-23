@@ -6,6 +6,9 @@ def test():
 def commit():
     local("git add . && git commit")
 
+def push_to_github():
+    local("git push github master")
+
 def deploy(prudent=True):
     """
     if prudent:
