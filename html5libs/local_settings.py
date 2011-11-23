@@ -29,7 +29,7 @@ logging.basicConfig(
 
 LOCAL_INSTALLED_APPS = []
 
-ROOT_URLCONF = "opencomparison.urls"
+ROOT_URLCONF = "html5libs.urls"
 
 LAUNCHPAD_ACTIVE = False
 

@@ -7,7 +7,9 @@ def commit():
     local("git add . && git commit")
 
 def deploy(prudent=True):
+    """
     if prudent:
         test()
-        commit()
+    """
+    commit()
     local("git push heroku master")
