@@ -37,6 +37,9 @@ def package_updater(server):
     else:
         local("python manage.py package_updater")
 
+def db_pull():
+    dbname = raw_input("What db name?")
+    local("heroku db:pull --app html5libs postgres://postgres@localhost/%s --confirm html5libs" %(dbname))
 
 # Admin features
 def superuser(server):

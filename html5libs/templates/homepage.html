@@ -15,7 +15,7 @@
 {% block body %}
 <div class="twelve_column section">
     <div class="three column">
-        <h2><i>{{ SITE_TITLE }} is a directory of reusable tools for the greater {{ FRAMEWORK_TITLE }} ecosystem.</i></h2>
+        <h2><i>{{ SITE_TITLE }} is a directory of reusable tools for the greater open web community.</i></h2>
         <p><b>{{ package_count }}</b> {% trans "libraries and counting!" %}</p>
         <p>
             {% trans "Know of any libraries not listed here?  Add them now!  It's quick and easy." %}
@@ -44,7 +44,7 @@
     <div class="one column"></div>
 
     <div class="three column">
-        <h2>3 random HTML5 Libraries</h2>
+        <h2>3 Random Libraries</h2>
         <table class="home-table">
             {% for package in random_packages %}
                 <tr class="usage-holder">
@@ -107,7 +107,7 @@
     <div class="one column"></div>
 
     <div class="three column">
-        <h2>{% trans "2 latest HTML5 libraries" %}</h2>
+        <h2>{% trans "2 Most Recent Libraries" %}</h2>
         <table class="home-table">
         {% for package in latest_packages %}
             <tr class="usage-holder">
