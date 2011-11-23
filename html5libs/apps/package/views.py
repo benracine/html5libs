@@ -53,11 +53,13 @@ def build_package_extenders(request):
     return package_extenders
 
 
-@login_required
+#@login_required
 def add_package(request, template_name="package/package_form.html"):
 
+    """
     if not request.user.get_profile().can_add_package:
         return HttpResponseForbidden("permission denied")
+    """
 
     new_package = Package()
     form = PackageForm(request.POST or None, instance=new_package)
