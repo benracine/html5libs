@@ -49,7 +49,11 @@
               {% endcomment %}
               <th class="repo-watchers">{% anchor repo_watchers "Watchers" %}</th>
               <th class="repo-forks">{% anchor repo_forks "Forks" %}</th>
-              <th>{% anchor title "Delete" %}</th>
+              {% if request.user.is_authenticated and profile.can_edit_grid %}
+                  <th>{% anchor title "Delete" %}
+                  <img src="{{ STATIC_URL }}img/icon_changelink.gif" alt="edit" />
+                  </th>
+              {% endif %}
             </tr>
             </thead>
 
@@ -73,7 +77,10 @@
                 {% endcomment %}
                 <td>{{ package.repo_watchers }}</td>
                 <td>{{ package.repo_forks }}</td>                
-                <td><a href="{% url package package.slug %}">{{ package.title }}</a></td>
+                {% if request.user.is_authenticated and profile.can_edit_grid %}
+                  <td><a href="{% url package package.slug %}">{{ package.title }}</a></td>
+                  <img src="{{ STATIC_URL }}img/icon_changelink.gif" alt="edit" />
+                {% endif %}
             </tr>    
         {% endfor %}        
         </tbody>        
