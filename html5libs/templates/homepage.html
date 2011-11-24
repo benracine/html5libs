@@ -45,6 +45,8 @@
      
     <div class="one column"></div>
 
+
+    {% comment %}
     <div class="three column">
         <h2>3 Random Libraries</h2>
         <table class="home-table">
@@ -72,6 +74,8 @@
             {% endfor %}
         </table>
     </div> <!-- three column (3rd) -->
+    {% comment %}
+
     <div class="one column"></div>
 </div> <!-- twelve_column section -->
 
@@ -109,7 +113,6 @@
     <div class="one column"></div>
 
     <div class="three column">
-        {% comment %}
         <h2>{% trans "2 Most Recent Libraries" %}</h2>
         <table class="home-table">
         {% for package in latest_packages %}
@@ -135,7 +138,6 @@
             </tr>            
         {% endfor %}
         </table>
-        {% endcomment %}
     </div> <!-- three column (3rd) -->
     <div class="one column"></div>
 </div> <!-- twelve_column section -->
