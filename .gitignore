@@ -6,3 +6,4 @@ hide
 .Python
 *.pyc
 *.log
+*.swp

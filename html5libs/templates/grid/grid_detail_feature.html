@@ -33,11 +33,6 @@
                     <td>{{ feature.title }}
                     {% if request.user.is_authenticated and profile.can_edit_grid_feature %}&nbsp;
                         <a href="{% url edit_feature feature.pk %}"><img src="{{ STATIC_URL }}img/icon_changelink.gif" alt="edit" /></a>
-                        {% if perms.grid.delete_feature %}
-                            <a href="#" id="feature-delete-{{ feature.pk }}">
-                                <img src="{{ STATIC_URL }}img/icon_deletelink.gif" alt="delete" />
-                            </a>
-                        {% endif %}
                     {% endif %}
                     </td>
                     <td>{{ feature.description|wordwrap:80|linebreaksbr }}</td>
@@ -61,9 +56,9 @@
                     {% for grid_package in grid_packages %}
                         {% with elements|hash:feature.pk|hash:grid_package.pk as element %}
                         <td class="clickable" id="element-f{{ feature.pk }}-p{{ grid_package.pk }}">{% if element %}{{ element.text|style_element|safe|urlize|linebreaksbr }}{% endif %}<noscript> 
-                                {% if request.user.is_authenticated and profile.can_edit_grid_element %}
-                                <a class="edit" href="{% url edit_element feature.pk grid_package.pk %}">{% trans "[edit]" %}</a>
-                                {% endif %}
+                            {% if request.user.is_authenticated and profile.can_edit_grid_element %}
+                            <a class="edit" href="{% url edit_element feature.pk grid_package.pk %}">{% trans "[edit]" %}</a>
+                            {% endif %}
                         </noscript></td>
                         {% endwith %}
                     {% endfor %}
