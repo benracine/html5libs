@@ -51,7 +51,7 @@
               <th class="repo-forks">{% anchor repo_forks "Forks" %}</th>
               {% if request.user.is_authenticated and profile.can_edit_grid %}
                   <th>{% anchor title "Delete" %}
-                  <img src="{{ STATIC_URL }}img/icon_changelink.gif" alt="edit" />
+                  <img src="{{ STATIC_URL }}img/icon_deletelink.gif" alt="edit" />
                   </th>
               {% endif %}
             </tr>

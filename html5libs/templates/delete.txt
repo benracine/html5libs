@@ -1,0 +1,30 @@
+./package/category.html:                  <th>{% anchor title "Delete" %}
+./package/package_list.html:                <th>{% trans "Delete" %}</th>
+./package/package_list.html:                    <td><a href="{% url delete_package package.slug %}" onclick="return confirm('Are you sure you want to delete?')" >{{ package.title }}</a></td>
+./package/package.html:                <th>{% trans "Delete" %}</th>
+./package/package.html:                <td><a href="{% url delete_package package.slug %}" onclick="return confirm('Are you sure you want to delete?')" >{{ package.title }}</a></td>
+./grid/hide/grid_detail_vispack.html:                            <a href="{% url edit_feature feature.pk %}"><img src="{{ STATIC_URL }}img/icon_changelink.gif" alt="edit" /></a>{% if perms.grid.delete_feature %}&nbsp;<a href="#" id="feature-delete-{{ feature.pk }}"><img src="{{ STATIC_URL }}img/icon_deletelink.gif" alt="delete" /></a>{% endif %}
+./grid/grid_detail.html:                    <th>{% trans "Delete" %}</th>
+./grid/grid_detail.html:                            <a href="{% url edit_feature feature.pk %}"><img src="{{ STATIC_URL }}img/icon_changelink.gif" alt="edit" /></a>{% if perms.grid.delete_feature %}&nbsp;<a href="#" id="feature-delete-{{ feature.pk }}"><img src="{{ STATIC_URL }}img/icon_deletelink.gif" alt="delete" /></a>{% endif %}
+./grid/grid_detail.html:                        <td> <a href="{% url delete_feature feature.id %}" onclick="return confirm('Are you sure you want to delete?')" />Delete {{ feature.title|wordwrap:80|linebreaksbr }} Feature</td>
+./grid/grid_detail.html:                    delete_confirmation = function(e, url) {
+./grid/grid_detail.html:                        // The deletes are placed in here so there is just one place needed
+./grid/grid_detail.html:                    // handle feature deletes
+./grid/grid_detail.html:                    {% if perms.grid.delete_feature %}
+./grid/grid_detail.html:                        $("a[id|='feature-delete']").click(function(e) {
+./grid/grid_detail.html:                            var url = "/grids/feature/" + array[2] + "/delete/";
+./grid/grid_detail.html:                            delete_confirmation(e,url);
+./grid/grid_detail.html:                    {% if perms.grid.delete_gridpackage %}
+./grid/grid_detail.html:                        // handle package deletes
+./grid/grid_detail.html:                        $("a[id|='package-delete']").click(function(e) {
+./grid/grid_detail.html:                            var url = "/grids/package/" + array[2] + "/delete/";
+./grid/grid_detail.html:                            delete_confirmation(e,url);
+./grid/snippets/grid_row_header.html:          <a href="{% url package grid_package.package.slug %}">{{ grid_package.package.title }}</a>{% if perms.grid.delete_gridpackage %}&nbsp;<a href="#" id="package-delete-{{ grid_package.pk }}"><img src="{{ STATIC_URL }}img/icon_deletelink.gif" alt="delete"/></a>{% endif %}
+./grid/snippets/grid.html:  <p><a href="{% url delete_grid grid.slug%}" onclick="return confirm('Are you sure you want to delete?')" >Delete the {{grid.title}} grid</a></p>
+Binary file ./grid/snippets/.grid.html.swp matches
+./grid/grid_detail_feature.html:                        {% if perms.grid.delete_feature %}
+./grid/grid_detail_feature.html:                            <a href="#" id="feature-delete-{{ feature.pk }}">
+./grid/grid_detail_feature.html:                                <img src="{{ STATIC_URL }}img/icon_deletelink.gif" alt="delete" />
+./grid/grid_detail_feature.html:                    delete_confirmation = function(e, url) {
+./grid/grid_detail_feature.html:                        // The deletes are placed in here so there is just one place needed
+./grid/delete_grid.html:    <p> I will learn how to delete soon </p>
