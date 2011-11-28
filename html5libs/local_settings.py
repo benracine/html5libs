@@ -17,7 +17,7 @@ SITE_TITLE = "Modern Client-Side Libraries"
 
 DEBUG = False
 TEMPLATE_DEBUG = DEBUG
-#SERVE_MEDIA = DEBUG
+SERVE_MEDIA = True
 #TEST_RUNNER = 'testrunner.OurTestRunner'
 
 logging.basicConfig(
