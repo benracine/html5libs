@@ -37,10 +37,10 @@ def migrate(server):
         local("python manage.py migrate")
 
 def package_updater(server):
-    if server=='dep':
-        local("heroku run python html5libs/manage.py package_updater")
-    else:
+    if server=='dev':
         local("python manage.py package_updater")
+    else:
+        local("heroku run python html5libs/manage.py package_updater")
 
 def db_pull():
     dbname = raw_input("What db name?")
