@@ -163,6 +163,7 @@ PREREQ_APPS = [
     'djcelery',
     'social_auth',
     'gunicorn',
+    'storages',
 ]
 
 INSTALLED_APPS = PREREQ_APPS + PROJECT_APPS
@@ -257,6 +258,13 @@ if LOCAL_INSTALLED_APPS:
 SUPPORTED_REPO.extend(["bitbucket", "github"])
 if LAUNCHPAD_ACTIVE:
     SUPPORTED_REPO += ["launchpad"]
+
+"""
+STATICFILES_STORAGE = ‘storages.backends.s3boto.S3BotoStorage’
+AWS_ACCESS_KEY_ID = ‘’
+AWS_SECRET_ACCESS_KEY = ‘’
+AWS_STORAGE_BUCKET_NAME = ‘'
+"""
 
 try:
     import djcelery
