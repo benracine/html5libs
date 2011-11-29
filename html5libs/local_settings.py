@@ -14,7 +14,6 @@ DATABASES = {
 FRAMEWORK_TITLE = "HTML5"
 SITE_TITLE = "Modern Client-Side Libraries"
 
-
 DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 SERVE_MEDIA = True
