@@ -13,7 +13,7 @@ DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 # serve media through the staticfiles app.
-SERVE_MEDIA = True
+SERVE_MEDIA = False
 
 INTERNAL_IPS = [
     "127.0.0.1",
