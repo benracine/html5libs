@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+f # -*- coding: utf-8 -*-
 # Django settings 
 
 import os.path
@@ -68,7 +68,8 @@ STATIC_ROOT = os.path.join(PROJECT_ROOT, "collected_static")
 
 # URL that handles the static files like app media.
 # Example: "http://media.lawrence.com"
-STATIC_URL = "/static/"
+#STATIC_URL = "/static/"
+STATIC_URL = "http://html5libs.s3-website-us-east-1.amazonaws.com/"
 
 # Additional directories which hold static files
 STATICFILES_DIRS = [
@@ -259,12 +260,10 @@ SUPPORTED_REPO.extend(["bitbucket", "github"])
 if LAUNCHPAD_ACTIVE:
     SUPPORTED_REPO += ["launchpad"]
 
-"""
-STATICFILES_STORAGE = ‘storages.backends.s3boto.S3BotoStorage’
-AWS_ACCESS_KEY_ID = ‘’
-AWS_SECRET_ACCESS_KEY = ‘’
-AWS_STORAGE_BUCKET_NAME = ‘'
-"""
+STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+AWS_ACCESS_KEY_ID = '0A92FJCQDVN0TGAKYM02'
+AWS_SECRET_ACCESS_KEY = 'RZB7tE7/dLCv4Kj2SlokWWQG9xLDlO0Vx73qj9vv'
+AWS_STORAGE_BUCKET_NAME = 'html5libs'
 
 try:
     import djcelery
