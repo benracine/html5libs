@@ -69,7 +69,8 @@ STATIC_ROOT = os.path.join(PROJECT_ROOT, "collected_static")
 # URL that handles the static files like app media.
 # Example: "http://media.lawrence.com"
 #STATIC_URL = "/static/"
-STATIC_URL = "http://html5libs.s3-website-us-east-1.amazonaws.com/"
+#STATIC_URL = "http://html5libs.s3-website-us-east-1.amazonaws.com/"
+STATIC_URL = "http://s3.amazonaws.com/html5libs/"
 
 # Additional directories which hold static files
 STATICFILES_DIRS = [
