@@ -1,4 +1,4 @@
-f # -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 # Django settings 
 
 import os.path
@@ -13,7 +13,7 @@ DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 # serve media through the staticfiles app.
-SERVE_MEDIA = False
+SERVE_MEDIA = True
 
 INTERNAL_IPS = [
     "127.0.0.1",
