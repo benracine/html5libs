@@ -10,6 +10,7 @@ from tastypie import fields
 from tastypie.bundle import Bundle
 from tastypie.exceptions import NotFound
 from tastypie.resources import ModelResource
+from tastypie.authorization import Authorization
 
 from django.conf.urls.defaults import url
 from grid.models import Grid
@@ -153,6 +154,7 @@ class GotwResource(EnhancedModelResource):
         include_absolute_url = True
         lookup_field = 'grid__slug'
         excludes = ["id"]        
+        authorization = Authorization()
         
 
 class CategoryResource(EnhancedModelResource):
