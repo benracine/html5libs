@@ -168,6 +168,7 @@ class CategoryResource(EnhancedModelResource):
         allowed_methods = ['get', 'post']
         lookup_field = 'slug'
         excludes = ["id"]        
+        authorization = Authorization()
 
 class UserResource(EnhancedModelResource):
     """User resource.
