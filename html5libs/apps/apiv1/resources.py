@@ -80,6 +80,8 @@ class PackageResourceBase(EnhancedModelResource):
         allowed_methods = ['get', 'post']
         include_absolute_url = True
         lookup_field = 'slug'
+        authorization = Authorization()
+        
         
 class GridResource(EnhancedModelResource):
     """Provides information about the grid.
@@ -95,6 +97,7 @@ class GridResource(EnhancedModelResource):
         include_absolute_url = True
         lookup_field = 'slug'
         excludes = ["id"]
+        authorization = Authorization()
         
     def override_urls(self):
         return [
@@ -141,6 +144,8 @@ class DpotwResource(ModelResource):
         include_absolute_url = True
         lookup_field = 'package__slug'
         excludes = ["id"]        
+        authorization = Authorization()
+
 
 class GotwResource(EnhancedModelResource):
     """Grid of the week resource.
@@ -169,6 +174,7 @@ class CategoryResource(EnhancedModelResource):
         lookup_field = 'slug'
         excludes = ["id"]        
         authorization = Authorization()
+
 
 class UserResource(EnhancedModelResource):
     """User resource.
@@ -210,4 +216,5 @@ class PackageResource(PackageResourceBase):
         allowed_methods = ['get', 'post']
         include_absolute_url = True
         lookup_field = 'slug'
+        authorization = Authorization()
         

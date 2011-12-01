@@ -7,7 +7,7 @@ This is the API documentation for OpenComparison. It is designed to be language 
 API Usage
 =========
 
-The current API is limited to read-only GET requests. Other HTTP methods will fail. Only JSON is provided
+Only JSON is provided
 
 API Reference
 =============
