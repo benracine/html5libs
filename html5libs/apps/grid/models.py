@@ -2,12 +2,14 @@ from django.conf import settings
 from django.contrib.auth.models import User
 from django.core.cache import cache
 from django.db import models
+from django.template.defaultfilters import slugify
 from django.utils.translation import ugettext_lazy as _ 
 
 from core.models import BaseModel
 from core.utils import cache_fetcher
 from grid import cachekeys
 from package.models import Package
+
 
 class Grid(BaseModel):
     """Grid object, inherits form :class:`package.models.BaseModel`. Attributes:
@@ -61,6 +63,12 @@ class Grid(BaseModel):
         
     class Meta:
         ordering = ['title']
+
+    def save(self, *args, **kwargs):
+        # For automatic slug generation.
+        if not self.slug:
+            self.slug = slugify(self.title)[:50]
+        return super(Grid, self).save(*args, **kwargs)
 
 
 class GridPackage(BaseModel):
