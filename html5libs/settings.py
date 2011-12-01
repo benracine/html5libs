@@ -165,7 +165,6 @@ PREREQ_APPS = [
     'djcelery',
     'social_auth',
     'gunicorn',
-    'storages',
 ]
 
 INSTALLED_APPS = PREREQ_APPS + PROJECT_APPS
