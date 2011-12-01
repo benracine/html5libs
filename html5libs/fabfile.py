@@ -11,6 +11,7 @@ def commit():
         print "No changes were made"
 
 def push():
+    commit()
     local("git push github master")
 
 def deploy(prudent=True):

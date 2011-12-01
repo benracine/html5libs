@@ -35,17 +35,17 @@ URIs
 ==============================================  ======================= ==================
 URI                                             Resource                Methods           
 ==============================================  ======================= ==================
-/`category`_/                                   Category list           GET
-/`category`_/{slug}/                            Category                GET
-/`grid`_/                                       Grid list               GET
-/`grid`_/{slug}/                                Grid                    GET
-/`grid`_/{slug}`/packages`_/                    Grid Packages list      GET
-/`grid-of-the-week`_/                           Featured Grid list      GET
-/`grid-of-the-week`_/{slug}/                    Featured Grid           GET
-/`package`_/                                    Package list            GET
-/`package`_/{slug}/                             Package                 GET
-/`package-of-the-week`_/                        Featured Package list   GET
-/`package-of-the-week`_/{slug}/                 Featured Package        GET
+/`category`_/                                   Category list           GET, POST
+/`category`_/{slug}/                            Category                GET, POST
+/`grid`_/                                       Grid list               GET, POST
+/`grid`_/{slug}/                                Grid                    GET, POST
+/`grid`_/{slug}`/packages`_/                    Grid Packages list      GET, POST
+/`grid-of-the-week`_/                           Featured Grid list      GET, POST
+/`grid-of-the-week`_/{slug}/                    Featured Grid           GET, POST
+/`package`_/                                    Package list            GET, POST
+/`package`_/{slug}/                             Package                 GET, POST
+/`package-of-the-week`_/                        Featured Package list   GET, POST
+/`package-of-the-week`_/{slug}/                 Featured Package        GET, POST
 ==============================================  ======================= ==================
 
 Resources
