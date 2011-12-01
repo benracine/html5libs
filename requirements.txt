@@ -51,4 +51,4 @@ Werkzeug
 
 django-storages
 boto
-python-dateutil==2.0
+python-dateutil==1.5
