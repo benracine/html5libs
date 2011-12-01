@@ -76,7 +76,7 @@ class PackageResourceBase(EnhancedModelResource):
     class Meta:
         queryset = Package.objects.all()
         resource_name = 'package'
-        allowed_methods = ['get']
+        allowed_methods = ['get', 'post']
         include_absolute_url = True
         lookup_field = 'slug'
         
@@ -90,7 +90,7 @@ class GridResource(EnhancedModelResource):
     class Meta:
         queryset = Grid.objects.all()
         resource_name = 'grid'
-        allowed_methods = ['get']
+        allowed_methods = ['get', 'post']
         include_absolute_url = True
         lookup_field = 'slug'
         excludes = ["id"]
@@ -116,7 +116,7 @@ class GridResource(EnhancedModelResource):
         
         Should return a ``HttpResponse`` (200 OK).
         """
-        self.method_check(request, allowed=['get'])
+        self.method_check(request, allowed=['get', 'post'])
         self.is_authenticated(request)
         self.throttle_check(request)
         
@@ -136,7 +136,7 @@ class DpotwResource(ModelResource):
     class Meta:
         queryset = Dpotw.objects.all()
         resource_name = 'package-of-the-week'
-        allowed_methods = ['get']
+        allowed_methods = ['get', 'post']
         include_absolute_url = True
         lookup_field = 'package__slug'
         excludes = ["id"]        
@@ -149,7 +149,7 @@ class GotwResource(EnhancedModelResource):
     class Meta:
         queryset = Gotw.objects.all()
         resource_name = 'grid-of-the-week'
-        allowed_methods = ['get']
+        allowed_methods = ['get', 'post']
         include_absolute_url = True
         lookup_field = 'grid__slug'
         excludes = ["id"]        
@@ -163,7 +163,7 @@ class CategoryResource(EnhancedModelResource):
     class Meta:
         queryset = Category.objects.all()
         resource_name = 'category'
-        allowed_methods = ['get']
+        allowed_methods = ['get', 'post']
         lookup_field = 'slug'
         excludes = ["id"]        
 
@@ -176,7 +176,7 @@ class UserResource(EnhancedModelResource):
     class Meta:
         queryset = User.objects.all().order_by("-id")
         resource_name = 'user'
-        allowed_methods = ['get']
+        allowed_methods = ['get', 'post']
         lookup_field = 'username'        
         fields = ["resource_uri", "last_login", "username", "date_joined"]
         
@@ -204,7 +204,7 @@ class PackageResource(PackageResourceBase):
     class Meta:
         queryset = Package.objects.all()
         resource_name = 'package'
-        allowed_methods = ['get']
+        allowed_methods = ['get', 'post']
         include_absolute_url = True
         lookup_field = 'slug'
         

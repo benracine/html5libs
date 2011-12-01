@@ -12,7 +12,7 @@ DATABASES = {
 }
 
 FRAMEWORK_TITLE = "HTML5"
-SITE_TITLE = "Modern Client-Side Libraries"
+SITE_TITLE = "Modern Web Libraries"
 
 DEBUG = False
 TEMPLATE_DEBUG = DEBUG
