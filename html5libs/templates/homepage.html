@@ -144,13 +144,11 @@
     <div class="one column"></div>
 </div> <!-- twelve_column section -->
 
-<!--
+{% comment %}
 <div class="twelve_column section">
     <div class="three column">
-        {% comment %}
        <h2>Public Service Announcements</h2>
        {{ psa_body|safe }}
-        {% endcomment %}
     </div> <!-- three column (1st) -->
     <div class="one column"></div>
 
@@ -160,14 +158,12 @@
     <div class="one column"></div>
 
     <div class="three column">
-        {% comment %}
         <h2>From the Official OpenComparison Blog</h2>
         <h3>{{ blogpost_title }}</h3>
         {{ blogpost_body|safe|truncatewords_html:50 }} 
         <p><a href="http://blog.opencomparison.org">read more...</a></p>
-        {% endcomment %}
     </div> <!-- three column (3rd) -->
     <div class="one column"></div>
 </div> <!-- twelve_column section -->
--->
+{% endcomment %}
 {% endblock %}
