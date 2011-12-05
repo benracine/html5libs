@@ -287,6 +287,8 @@ SOCIAL_AUTH_DEFAULT_USERNAME = lambda u: slugify(u)
 SOCIAL_AUTH_EXTRA_DATA = False
 SOCIAL_AUTH_CHANGE_SIGNAL_ONLY = True
 
+CELERYBEAT_SCHEDULER = 'djcelery.schedulers.DatabaseScheduler'
+
 LOGIN_URL = "/login/"
 LOGIN_REDIRECT_URLNAME = "home"
 LOGIN_REDIRECT_URL = '/'
